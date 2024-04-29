@@ -1,1 +1,381 @@
+/* Global styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: hotpink;
+    margin: 0;
+    padding: 0;
+    min-height: 150vh; /* Set minimum height of the body to full viewport height */
+    position: relative; /* Set body position to relative */
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 600px) {
+    header {
+        flex-direction: column; /* Change direction to column */
+        align-items: center; /* Center align items */
+    }
+    nav ul {
+        flex-direction: column; /* Change direction to column */
+        align-items: center; /* Center align items */
+        margin-top: 10px; /* Adjust margin for spacing */
+    }
+    nav ul li {
+        margin: 0px 10px; /* Adjust margin for vertical spacing */
+    }
+    nav ul {
+        flex-wrap: wrap; /* Allow flex items to wrap */
+    }
+}
+
+
+#about {
+    display: hidden;
+    width: 100%;
+    padding: 3px; /* Padding for content */
+    background-image: url("./images/ba0.png");
+    background-size: cover; /* Adjusts the background image size to cover the entire section */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+    background-color: olive;
+}
+
+
+.hidden {
+    display: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.content div {
+    width: 30%;
+    margin: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.content div:hover {
+    transform: scale(1.1);
+}
+
+#servicesDropdown {  
+    width: 200px; /* Set width as per your preference */
+    padding: 5px; /* Add padding for spacing inside the box */
+    border: 1px solid #ccc; /* Add border for the box */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    background-color: green;
+    color: yellow;
+    margin-right: 300px;
+}
+
+.salon-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px 30px;
+}
+
+.salon {
+    width: 30%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.salon h3, .salon p {
+    margin: 5px 0;
+}
+
+.salon p.full-description {
+    display: none;
+    height: 0;
+}
+
+.salon:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+}
+
+.salon:hover .full-description {
+    display: block;
+    height: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Define keyframes for rainbow effect */
+@keyframes rainbow {
+    0% { color: red; }
+    20% { color: orange; }
+    40% { color: yellow; }
+    60% { color: green; }
+    80% { color: blue; }
+    100% { color: purple; }
+}
+
+/* Apply animation to the heading */
+h1 {
+    animation: rainbow 4s infinite; /* Change the duration or other values to adjust the effect */
+}
+
+#contact {
+  display: none;
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+  background-color: green;
+}
+
+#inforForm {
+  border: 2px solid black;
+  width: 95%;
+  margin-left: 2%;
+  background-color: gray;
+}
+
+@media (min-width: 768px) {
+  #inforForm {
+    margin-left: 6%;
+  }
+}
+
+
+
+/* Form submit button */
+#submit button {
+    display: inline-block;
+    padding: 20px 20px;
+    background-color: red;
+    color: red;
+    border: solid;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.salon.zoomed {
+    transform: scale(1.2); /* Adjust the scale value as needed */
+}
+
+
+ .zoomed {
+      position: fixed;
+      top: 100px; /* Adjust this value as needed */
+      left: 50%;
+      transform: translateX(-50%) scale(1);
+      transition: transform 0.5s ease;
+      z-index: 1000; /* Ensure it's above other content */
+      background-color: green;
+    }
+    
+    .hidden {
+      display: none;
+    }
+
+
+
+footer {
+  background-color: #1E90FF; /* Unique color */
+  color: #fff; /* Text color */
+  padding: 20px;
+  text-align: center; /* Center-align text */
+}
+
+footer .footer-links,
+footer .social-media {
+  display: inline-block; /* Ensure both sections are inline */
+  vertical-align: middle; /* Align vertically */
+}
+
+footer .footer-links ul,
+footer .social-media ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer button,
+footer .footer-links ul li a,
+footer .social-media ul li a {
+  border: 2px solid; /* Add transparent border initially */
+  padding: 10px 20px;
+  margin: 0 10px; /* Add margin between items */
+  text-decoration: none;
+  color: yellow;
+  background-color: green;
+  font-weight: bolder;
+  transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+footer button:hover,
+footer .footer-links ul li a:hover,
+footer .social-media ul li a:hover {
+  border-color: #fff; /* Change border color on hover */
+}
+
+footer .social-media h2 {
+  color: #fff; /* Social media heading color */
+}
+
+footer .social-media .social-icons a img {
+  width: 170px; /* Adjust image width */
+  height: auto; /* Maintain aspect ratio */
+  border: 2px solid;
+}
+
+
+
+/* Header Styles */
+header {
+  background-color: silver; /* Background color */
+  padding: 20px; /* Add some padding */
+  text-align: center; /* Center align the content */
+}
+
+/* Logo Styles */
+#logo {
+  max-width: 400px; /* Limit the logo width */
+  margin-bottom: 10px; /* Add some space below the logo */
+  display: inline-block; /* Make the logo inline-block */
+  vertical-align: middle; /* Align vertically with other inline elements */
+    margin-left: 0px;
+    margin-right: 30px;
+    width: 500px;
+    float: left; /* Added to align the logo to the left */
+}
+
+
+/* Navigation Styles */
+nav {
+  display: inline-block; /* Make the navigation inline-block */
+  vertical-align: middle; /* Align vertically with other inline elements */
+  margin-left: 20px; /* Add margin on the left for spacing */
+}
+
+/* Services Dropdown Styles */
+#servicesDropdown {
+  padding: 8px 12px; /* Add padding to the dropdown */
+  font-size: 16px; /* Increase font size */
+  border: 1px solid #ccc; /* Add a border */
+  border-radius: 4px; /* Add border radius */
+  display: inline-block; /* Make the dropdown inline-block */
+  vertical-align: middle; /* Align vertically with other inline elements */
+  margin-left: 20px; /* Add margin on the left for spacing */
+}
+
+/* Link Styles */
+nav ul {
+  display: inline-block; /* Make the list inline-block */
+  vertical-align: middle; /* Align vertically with other inline elements */
+  margin-left: 20px; /* Add margin on the left for spacing */
+}
+
+nav ul li {
+  display: inline-block; /* Display list items horizontally */
+  margin-right: 10px; /* Add some space between list items */
+}
+
+/* Link Styles */
+nav ul li a {
+  text-decoration: none; /* Remove underline */
+  color: yellow; /* Link color */
+  font-weight: bold; /* Make the text bold */
+  padding: 8px 12px; /* Add padding to the links */
+  border: 1px solid #ccc; /* Add a border */
+  border-radius: 4px; /* Add border radius */
+  background-color: green;
+  border-color: black;
+}
+
+/* Link Hover Styles */
+nav ul li a:hover {
+  background-color: #ddd; /* Change background color on hover */
+}
+
+
+
+
+
+
+/* Appointment Form Styles */
+#about {
+  text-align: center; /* Center align the content within the section */
+}
+
+form#appointment {
+  max-width: 500px; /* Set a maximum width for the form */
+  margin: 0 auto; /* Center the form horizontally */
+  padding: 5px; /* Add padding to the form */
+  border: 1px solid #ccc; /* Add a border to the form */
+  border-radius: 8px; /* Add border radius */
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+form#appointment h1 {
+  margin-bottom: 1px; /* Add some space below the heading */
+}
+
+form#appointment label {
+  display: block; /* Display labels as blocks */
+  margin-bottom: 1px; /* Add space between labels */
+}
+
+form#appointment input[type="text"],
+form#appointment input[type="email"],
+form#appointment input[type="tel"],
+form#appointment select {
+  width: calc(100% - 20px); /* Calculate input width */
+  padding: 4px; /* Add padding to inputs */
+  margin-bottom: 3px; /* Add space between inputs */
+}
+
+form#appointment input[type="submit"] {
+  width: 100%; /* Set button width to fill container */
+  padding: 5px; /* Add padding to button */
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none; /* Remove button border */
+  border-radius: 4px; /* Add border radius */
+  cursor: pointer; /* Add cursor pointer on hover */
+}
+
+form#appointment input[type="submit"]:hover {
+  background-color: #0056b7; /* Change button background color on hover */
+}
