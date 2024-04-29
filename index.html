@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Braids Adore by Bisi</title>
+    <script src="./scripts/script.js"></script>
+    <link rel="stylesheet" href="./scripts/styles.css"> 
+</head>
+<body>
+    <header>
+       <img id="logo" src="./images/logo1.png" alt="Logo">
+       <h1>☎: (667) 324-9721  areadebisi@gmail.com</h1>
+       <nav>
+        <ul>
+              <li><a href="#" onclick= "reloadIndex()">Home</a></li>
+              <li><a href="#" onclick="showSection('about')">Schedule Appointment</a></li>
+            </ul>
+        <select id="servicesDropdown" onchange="handleOption(this)">
+        <option value="default">Our Services</option>
+        <option value="bohe">- Bohemians Knotles</option>
+        <option value="box">- Box Braids</option>
+        <option value="butterfly">- Butterfly Lock</option>
+        <option value="cornrows">- Cornrows</option>
+        <option value="crotche">- Crotche</option>
+        <option value="kinky">- Kinky Twist</option>
+        <option value="knotles">- Knotles Braids</option>
+        <option value="senegalese">- Senegalese Twist</option>
+        <option value="softlock">- Soft Lock</option>
+        <option value="storch">- Storch Cornrows</option>
+        <option value="appointment">- Schedule Your Appointment</option>
+          <script>
+    function handleOption(select) {
+      var option = select.value;
+      switch (option) {
+        case "bohe":
+          bohe();
+          break;
+        case "box":
+          box();
+          break;
+        case "butterfly":
+          butterfly();
+          break;
+        case "cornrows":
+          cornrows();
+          break;
+        case "crotche":
+          crotche();
+          break;
+        case "kinky":
+          kinky();
+          break;
+        case "knotles":
+          knotles();
+          break;
+        case "senegalese":
+          senegalese();
+          break;
+         case "softlock":
+          softlock();
+          break;
+         case "storch":
+          storch();
+          break;
+         case "appointment":
+          appointment();
+          break;
+         default:
+          reloadIndex();
+          break;
+      }
+    }
+    </script>
+      </select>
+        </nav>
+    </header>
+
+    <main>
+    <section id="about" class="hidden">
+      <form id="appointment" action="https://formspree.io/f/xbjnwlrp" method="POST">
+      <h1>Schedule Appointment</h1>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone" required><br><br>
+    <label for="appointment-date">Choose a date:</label>
+    <input type="date" id="appointment-date" name="appointment_date" required><br><br>
+    <label for="appointment-time">Choose a time:</label>
+    <input type="time" id="appointment-time" name="appointment_time" required><br><br>
+    <label for="hairstyle">Hairstyle:</label>
+    <select id="hairstyle" name="hairstyle" required>
+      <option value="Hairstyle 1">Hairstyle 1</option>
+      <option value="Hairstyle 2">Mid Back Length Braids</option>
+      <option value="Hairstyle 3">Waist Length Braids</option>
+      <option value="Hairstyle 4">Mid But Braids</option>
+      <option value="Hairstyle 5">Top But Braids</option>
+      <option value="Hairstyle 6">Under But Braids</option>
+      <option value="Hairstyle 7">Hand Braids</option>
+      <option value="Hairstyle 8">Jumbo Braids</option>
+      <option value="Hairstyle 9">Waist Length Braids</option>
+      <option value="Hairstyle 10">Mid But Braids</option>
+    </select><br><br>
+        <input type="submit" value="Submit Appointment">
+  </form> 
+   </section>
+
+  <section id="contact" class="hidden">
+  <a href="https://www.google.com/maps/search/?api=1&query=3610+Milford+Mill+Rd%2C+Windsor+Mill%2C+MD" target="_blank" style="color: white;">
+    <img src="https://maps.gstatic.com/mapfiles/embed/images/google4.png" alt="Map Icon" style="vertical-align: middle; margin-right: 5px;">
+    3610 Milford Mill Rd, Windsor Mill, MD
+  </a>
+  <h1 style="color: white;">My Hair! My Beauty -------Always Open Every day of the Week, 6am - 6pm</h1>
+</section>
+
+  
+    
+   <div class="salon-container">
+    <div id="bohe" class="salon" onclick="moveBack()">
+    <h3>Bohemians Knotles</h3>
+    <img src="./images/A00.png" alt="Image1" width="300px" height="300px">
+    <p>Description:</p>
+    <p class="full-description">- Bohemians Knotles: This hairstyle involves creating small, twisted knots all over the head. The style is often associated with a bohemian or hippie look.
+    Cost: $40 - $60</p>
+    </div>
+    
+    <div id="box" class="salon" onclick="moveBack()">
+      <h3>Box Braids</h3>
+      <img src="./images/ba0.png" alt="Image2" width="300px" height="300px">
+      <p>Description:</p>
+      <p class="full-description">Box Braids: This hairstyle involves sectioning the hair into small squares and braiding each section from the root to the tip. The braids are usually quite thick and can be styled in a variety of ways.
+      Cost: $40 - $60</p>
+    </div>
+    
+    
+    <div id="butterfly" class="salon" onclick="moveBack()">
+      <h3>Butterfly Lock</h3>
+      <img src="./images/ba1.png" alt="Image3" width="300px" height="300px">
+       <p>Description:</p>
+      <p class="full-description">Butterfly Lock: This hairstyle involves creating small twists in the hair that are then pulled into a loop and secured with a hairpin or clip. The loops resemble butterfly wings and give the style its name.
+      Cost: $40 - $60</p>
+    </div>
+    
+    <div id="cornrows" class="salon" onclick="moveBack()">
+      <h3>Cornrows</h3>
+      <img src="./images/ba2.png" alt="Image4" width="300px" height="300px">
+       <p>Description:</p>
+      <p class="full-description">Cornrows: This hairstyle involves braiding the hair flat against the scalp in narrow rows. The braids can be done in a variety of patterns and styles.
+      Cost: $40 - $60</p>
+    </div>
+     
+    <div id="crotche" class="salon" onclick="moveBack()">
+      <h3>Crotche</h3>
+      <img src="./images/ba3.png" alt="Image5" width="300px" height="300px">
+       <p>Description:</p>
+      <p class="full-description">Crotchet: This hairstyle involves attaching extensions to the hair using a crochet hook. The extensions can be styled in various ways and made from various materials.
+      Cost: $40 - $60</p>
+    </div>
+   
+    <div id="kinky" class="salon" onclick="moveBack()">
+      <h3>Kinky Twist</h3>
+      <img src="./images/ba4.png" alt="Image6" width="300px" height="300px">
+       <p>Description:</p>
+      <p class="full-description">Kinky Twist: This hairstyle involves twisting small sections of hair together to create a textured, curly look. The twists can be done in a variety of sizes and can be styled in many ways.
+      Cost: $40 - $60</p>
+    </div>
+    
+    <div id="knotles" class="salon" onclick="moveBack()">
+      <h3>Knotles Braids</h3>
+      <img src="./images/ba5.png" alt="Image7" width="300px" height="300px">
+       <p>Description:</p>
+      <p class="full-description"> Knotles Braids: This hairstyle involves creating small, twisted knots all over the head, similar to the Bohemian Knotles style.
+      Cost: $40 - $60</p>
+    </div>
+    
+
+    <div id="senegalese" class="salon" onclick="moveBack()">
+      <h3> Senegalese Twist</h3>
+      <img src="./images/ww1.jpg" alt="Image8" width="300px" height="300px">
+       <p>Description:</p>
+      <p class="full-description">Senegalese Twist: This hairstyle involves twisting extensions into the hair in a specific pattern. The twists are usually quite long and can be styled in many ways.
+      Cost: $40 - $60</p>
+    </div>
+
+    <div id="softlock" class="salon" onclick="moveBack()">
+      <h3>Soft Lock</h3>
+      <img src="./images/ww9.jpg" alt="Image9" width="300px" height="300px">
+       <p>Description:</p>
+      <p class="full-description">Soft Lock: This hairstyle involves coiling small sections of hair into spirals and securing them with a hairpin or clip. The spirals are usually quite small and give the hair a soft, textured look.
+      Cost: $40 - $60</p>
+    </div>
+
+    <div id="storch" class="salon" onclick="moveBack()">
+      <h3>Storch Cornrows</h3>
+      <img src="./images/ww3.jpg" alt="Image10" width="300px" height="300px">
+       <p>Description:</p>
+      <p class="full-description">Storch Cornrows: This hairstyle is similar to traditional cornrows but involves braiding the hair in a specific pattern to create a raised 3D effect. The style is often quite intricate and can be very time-consuming to create.
+      Cost: $40 - $60</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+        <div class="media-buttons">
+          <button onclick="reloadIndex()">Home</button>
+
+        <div class="footer-links">
+    <ul>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+  </div>
+  
+   <div class="social-media">
+    <ul class="social-icons">
+    <a href="https://www.youtube.com/channel/UC7jRJSBfr8ykzPpxv-zKRqQ" target="_blank">
+            <img src="https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo.svg" alt="YouTube Icon" width="150">
+        </a>
+
+    <a href="https://api.whatsapp.com/send?phone=16673249721" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon" width="50" style="max-width: 40px;">
+     <a href="https://www.instagram.com/braids_adore_by_bisi/" target="_blank">
+    
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/braids_adore_by_bisi/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+        <!-- Instagram embed code here -->
+    </blockquote>
+</a>
+
+</a>
+
+  </ul>
+</div>
+<p>&copy; 2024 Braids Adore. All rights reserved.</p>
+<h2>Connect With US</h2>
+</footer>
+
+
+<script>
+
+  function showSection(sectionId) {
+       // Hide all sections
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => section.classList.add('hidden'));
+
+        // Show the clicked section
+        document.getElementById(sectionId).classList.remove('hidden');
+    }
+    
+    function bohe() {
+    moveBack();
+    var boheDiv = document.getElementById('bohe');
+    boheDiv.classList.add('zoomed');
+}
+
+function box() {
+    moveBack();
+    var boxDiv = document.getElementById('box');
+    boxDiv.classList.add('zoomed');
+}
+
+// Repeat this pattern for each service function...
+
+
+    function butterfly() {
+      moveBack();
+      var butterflyDiv = document.getElementById('butterfly');
+      butterflyDiv.classList.add('zoomed');
+    }
+
+    function cornrows() {
+      moveBack();
+      var cornrowsDiv = document.getElementById('cornrows');
+      cornrowsDiv.classList.add('zoomed');
+    }
+
+    function crotche() {
+      moveBack();
+      var crotcheDiv = document.getElementById('crotche');
+      crotcheDiv.classList.add('zoomed');
+    }
+
+    function kinky() {
+      moveBack();
+      var kinkyDiv = document.getElementById('kinky');
+      kinkyDiv.classList.add('zoomed');
+    }
+
+    function knotles() {
+      moveBack();
+      var knotlesDiv = document.getElementById('knotles');
+      knotlesDiv.classList.add('zoomed');
+    }
+    
+    function senegalese() {
+      moveBack();
+      var senegaleseDiv = document.getElementById('senegalese');
+      senegaleseDiv.classList.add('zoomed');
+    }
+
+    function softlock() {
+      moveBack();
+      var softlockDiv = document.getElementById('softlock');
+      softlockDiv.classList.add('zoomed');
+    }
+
+    function storch() {
+      moveBack();
+      var storchDiv = document.getElementById('storch');
+      storchDiv.classList.add('zoomed');
+    }
+
+    function moveBack() {
+    const salonDivs = document.querySelectorAll('.salon');
+    salonDivs.forEach(div => div.classList.remove('zoomed'));
+    }
+
+    function appointment() {
+      var appointmentDiv = document.getElementById('appointment');
+      appointmentDiv.classList.add('zoomed');
+    }
+
+
+    // Redirect functions
+    function reloadIndex() {
+        window.location.href = 'index.html';
+    }
+</script>
+</body>
+</html>
