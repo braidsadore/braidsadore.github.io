@@ -1,19 +1,104 @@
-/* Global styles */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+
+.hair-style {
+    margin-bottom: 20px; /* Optional: Add space between each hair style */
+    width: 70%;
+    background-color: skyblue;
+    display: flex;
+    align-items: center;
+    margin-left: 15%;
+    border: 2px solid #333; /* Define border */
+  }
+
+.hair-style p {
+    display: none;
+    width: 500px;
+    border-width: 1px;
+    color: brown;
+    background-color: lightgray;
+    margin-right: 40px; /* Optional: Add space between options and button */
+    margin-left: 10px;
+}
+
+.hair-style button {
+    margin-left: auto; /* Push the button to the right */
+    margin-right: 10px; /* Add right margin */
+    background-color: blueviolet;
+    color: white;
+}
+
+.selected-styles {
+    display: none; /* Initially hide the element */
+    width: 70%;
+    margin: 0 auto; /* Center the element horizontally */
+    padding: 10px;
+    border: 2px solid #333; /* Define border */
+    background-color: #f0f0f0; /* Define background color */
+    text-align: center; /* Center text */
+}
+
+header {
+    background-color: pink;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+html {
+    height: 100%;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: hotpink;
     margin: 0;
     padding: 0;
-    min-height: 150vh; /* Set minimum height of the body to full viewport height */
-    position: relative; /* Set body position to relative */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: deeppink;
 }
+
+.content {
+    flex: 1;
+}
+
+footer {
+    background-color: slategray;
+    color: white;
+    padding: 55px;
+    text-align: center;
+}
+
+.selected-styles {
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.selected-styles h2 {
+    margin-bottom: 10px;
+}
+
+.selected-styles .button-container {
+    margin-bottom: 10px;
+}
+
+.selected-styles button {
+    width: 20%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.selected-styles button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+
 
 /* Media query for smaller screens */
 @media screen and (max-width: 600px) {
@@ -34,16 +119,6 @@ body {
     }
 }
 
-
-#about {
-    display: hidden;
-    width: 100%;
-    padding: 3px; /* Padding for content */
-    background-image: url("./images/ba0.png");
-    background-size: cover; /* Adjusts the background image size to cover the entire section */
-    background-repeat: no-repeat; /* Prevents the background image from repeating */
-    background-color: olive;
-}
 
 
 .hidden {
@@ -154,28 +229,6 @@ h1 {
     animation: rainbow 4s infinite; /* Change the duration or other values to adjust the effect */
 }
 
-#contact {
-  display: none;
-  display: flex;
-  flex-wrap: wrap;
-  color: white;
-  background-color: green;
-}
-
-#inforForm {
-  border: 2px solid black;
-  width: 95%;
-  margin-left: 2%;
-  background-color: gray;
-}
-
-@media (min-width: 768px) {
-  #inforForm {
-    margin-left: 6%;
-  }
-}
-
-
 
 /* Form submit button */
 #submit button {
@@ -189,76 +242,6 @@ h1 {
     transition: background-color 0.3s ease;
 }
 
-
-.salon.zoomed {
-    transform: scale(1.2); /* Adjust the scale value as needed */
-}
-
-
- .zoomed {
-      position: fixed;
-      top: 100px; /* Adjust this value as needed */
-      left: 50%;
-      transform: translateX(-50%) scale(1);
-      transition: transform 0.5s ease;
-      z-index: 1000; /* Ensure it's above other content */
-      background-color: green;
-    }
-    
-    .hidden {
-      display: none;
-    }
-
-
-
-footer {
-  background-color: #1E90FF; /* Unique color */
-  color: #fff; /* Text color */
-  padding: 20px;
-  text-align: center; /* Center-align text */
-}
-
-footer .footer-links,
-footer .social-media {
-  display: inline-block; /* Ensure both sections are inline */
-  vertical-align: middle; /* Align vertically */
-}
-
-footer .footer-links ul,
-footer .social-media ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-footer button,
-footer .footer-links ul li a,
-footer .social-media ul li a {
-  border: 2px solid; /* Add transparent border initially */
-  padding: 10px 20px;
-  margin: 0 10px; /* Add margin between items */
-  text-decoration: none;
-  color: yellow;
-  background-color: green;
-  font-weight: bolder;
-  transition: border-color 0.3s; /* Smooth transition for border color */
-}
-
-footer button:hover,
-footer .footer-links ul li a:hover,
-footer .social-media ul li a:hover {
-  border-color: #fff; /* Change border color on hover */
-}
-
-footer .social-media h2 {
-  color: #fff; /* Social media heading color */
-}
-
-footer .social-media .social-icons a img {
-  width: 170px; /* Adjust image width */
-  height: auto; /* Maintain aspect ratio */
-  border: 2px solid;
-}
 
 
 
@@ -281,13 +264,6 @@ header {
     float: left; /* Added to align the logo to the left */
 }
 
-
-/* Navigation Styles */
-nav {
-  display: inline-block; /* Make the navigation inline-block */
-  vertical-align: middle; /* Align vertically with other inline elements */
-  margin-left: 20px; /* Add margin on the left for spacing */
-}
 
 /* Services Dropdown Styles */
 #servicesDropdown {
@@ -330,52 +306,3 @@ nav ul li a:hover {
 }
 
 
-
-
-
-
-/* Appointment Form Styles */
-#about {
-  text-align: center; /* Center align the content within the section */
-}
-
-form#appointment {
-  max-width: 500px; /* Set a maximum width for the form */
-  margin: 0 auto; /* Center the form horizontally */
-  padding: 5px; /* Add padding to the form */
-  border: 1px solid #ccc; /* Add a border to the form */
-  border-radius: 8px; /* Add border radius */
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-form#appointment h1 {
-  margin-bottom: 1px; /* Add some space below the heading */
-}
-
-form#appointment label {
-  display: block; /* Display labels as blocks */
-  margin-bottom: 1px; /* Add space between labels */
-}
-
-form#appointment input[type="text"],
-form#appointment input[type="email"],
-form#appointment input[type="tel"],
-form#appointment select {
-  width: calc(100% - 20px); /* Calculate input width */
-  padding: 4px; /* Add padding to inputs */
-  margin-bottom: 3px; /* Add space between inputs */
-}
-
-form#appointment input[type="submit"] {
-  width: 100%; /* Set button width to fill container */
-  padding: 5px; /* Add padding to button */
-  background-color: #007bff; /* Button background color */
-  color: #fff; /* Button text color */
-  border: none; /* Remove button border */
-  border-radius: 4px; /* Add border radius */
-  cursor: pointer; /* Add cursor pointer on hover */
-}
-
-form#appointment input[type="submit"]:hover {
-  background-color: #0056b7; /* Change button background color on hover */
-}
