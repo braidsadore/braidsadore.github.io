@@ -326,8 +326,18 @@
   const bookNowButton = styleOptions.parentNode.querySelector("button");
   bookNowButton.innerHTML = "Confirm Selection(s)";
   bookNowButton.style.backgroundColor = "red";
-  bookNowButton.onclick = function() { confirmSelection(optionsId); };
+  bookNowButton.onclick = function() { 
+    confirmSelection(optionsId);
+    // Hide all other divs after confirming selection
+    const allOptionsDivs = document.querySelectorAll('.hair-style');
+    allOptionsDivs.forEach(function(div) {
+      if (div.id !== optionsId) {
+        div.style.display = 'none';
+      }
+    });
+  };
 }
+
 
 
 
