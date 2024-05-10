@@ -259,12 +259,9 @@
 </div>
 
 
-
-
 <div class="selected-styles" id="selected-styles">
     <h2>Selected Styles</h2>
     <div id="selected-styles-list"></div>
-    <button onclick="confirmSelection()">Confirm Your Selection(s)</button>
     <p>Total Price: <span id="total-price">$0</span></p>
 
     <form id="appointment-form">
@@ -309,38 +306,29 @@
 </main>
 
 <script>
- /*   
- function showStyles(id) {
-   
-    
-    // Show the input options for the selected style
-        let styleOptions = document.getElementById(id);
-        styleOptions.querySelectorAll('p').forEach(function(option) {
-            option.style.display = 'block';
-        });
-        
-        // Show the selected styles div
-        document.getElementById('selected-styles').style.display = 'block';
-    }
-  */
-
-    // JavaScript for functionality
-    function showStyles(id) {
-    // Hide all input options
-    let options = document.querySelectorAll('.hair-style p');
-    options.forEach(function(option) {
-        option.style.display = 'none';
-    });
-    
-    // Show the input options for the selected style
-    let styleOptions = document.getElementById(id);
-    styleOptions.querySelectorAll('p').forEach(function(option) {
-        option.style.display = 'block';
-    });
-    
-    // Show the selected styles div
-    document.getElementById('selected-styles').style.display = 'block';
+ function showStyles(optionsId) {
+  // Hide all input options
+  const optionsDivs = document.querySelectorAll('.hair-style p');
+  optionsDivs.forEach(function(option) {
+    option.style.display = 'none';
+  });
+  
+  // Show the input options for the selected style
+  const styleOptions = document.getElementById(optionsId);
+  styleOptions.querySelectorAll('p').forEach(function(option) {
+    option.style.display = 'block';
+  });
+  
+  // Show the selected styles div
+  document.getElementById('selected-styles').style.display = 'block';
+  
+  // Update button text and functionality
+  const bookNowButton = styleOptions.parentNode.querySelector("button");
+  bookNowButton.innerHTML = "Confirm Selection(s)";
+  bookNowButton.style.backgroundColor = "red";
+  bookNowButton.onclick = function() { confirmSelection(optionsId); };
 }
+
 
 
 
