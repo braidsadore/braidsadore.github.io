@@ -457,6 +457,29 @@ function openPaypalPaymentWindow(depositAmount, balance) {
     alert(`Opening PayPal payment window. Deposit: $${depositAmount}. Balance: $${balance}.`);
 }
 
+ // Function to submit the form
+function submitForm() {
+    // Get the selected styles list
+    var selectedStylesList = document.getElementById("selected-styles-list").innerHTML;
+    // Get the total price
+    var totalPrice = document.getElementById("total-price").textContent;
+
+    // Set the values of hidden inputs
+    document.getElementById("selected-styles-hidden").value = selectedStylesList;
+    document.getElementById("total-price-hidden").value = totalPrice;
+
+    // Submit the form
+    document.getElementById("appointment-form").submit();
+}
+
+// Event listener for form submission
+document.getElementById("appointment-form").addEventListener("submit", function(event) {
+    // Prevent the default form submission
+    event.preventDefault();
+    // Call the function to submit the form
+    submitForm();
+});
+
 </script>
 
 </body>
