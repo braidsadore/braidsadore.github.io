@@ -289,7 +289,16 @@
         <label for="cash-app">Cash App</label><br>
         <input type="radio" id="paypal" name="payment" value="paypal">
         <label for="paypal">Paypal</label><br>
+
+        <!-- Hidden inputs for selected styles and total price -->
+        <input type="hidden" id="selected-styles-hidden" name="selected_styles">
+        <input type="hidden" id="total-price-hidden" name="total_price">
+
         <h2>Selected Styles</h2>
+        <div id="selected-styles-list"></div>
+        <p>Total Price: <span id="total-price">$0</span></p>
+        
+        <!-- Rest of the form -->
         <h2>Book Appointment</h2>
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required><br>
@@ -303,13 +312,13 @@
         <select id="time" name="time" required>
             <!-- Options for appointment times -->
         </select><br>
-        <div id="selected-styles-list"></div>
-        <p>Total Price: <span id="total-price">$0</span></p>
+
+        <!-- Remaining form elements -->
+
         <p>Balance: <span id="balance">$0</span></p>
         <button type="submit">Submit Appointment</button> 
     </form>
 </div>
-
  <footer>
  <p>Contact us at areadebisi@gmail.com</p>
 </footer>
