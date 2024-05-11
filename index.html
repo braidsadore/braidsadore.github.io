@@ -282,28 +282,6 @@
  
 <div class="selected-styles" id="selected-styles">
     <form id="appointment-form" action="https://formspree.io/f/xbjnwlrp" method="POST">
-        <h2>Selected Styles</h2>
-        <div id="selected-styles-list"></div>
-        <p>Total Price: <span id="total-price">$0</span></p>
-
-        <h2>Book Appointment</h2>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br>
-
-        <label for="phone">Phone:</label>
-        <input type="tel" id="phone" name="phone" required><br>
-
-        <label for="date">Date:</label>
-        <input type="date" id="date" name="date" required><br>
-
-        <label for="time">Time:</label>
-        <select id="time" name="time" required>
-            <!-- Options for appointment times -->
-        </select><br>
-
         <h3>Payment Options:</h3>
         <input type="radio" id="zelle" name="payment" value="zelle">
         <label for="zelle">Zelle</label><br>
@@ -311,6 +289,22 @@
         <label for="cash-app">Cash App</label><br>
         <input type="radio" id="paypal" name="payment" value="paypal">
         <label for="paypal">Paypal</label><br>
+        <h2>Selected Styles</h2>
+        <h2>Book Appointment</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required><br>
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required><br>
+        <label for="time">Time:</label>
+        <select id="time" name="time" required>
+            <!-- Options for appointment times -->
+        </select><br>
+        <div id="selected-styles-list"></div>
+        <p>Total Price: <span id="total-price">$0</span></p>
         <p>Balance: <span id="balance">$0</span></p>
         <button type="submit">Submit Appointment</button> 
     </form>
