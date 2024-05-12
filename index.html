@@ -38,10 +38,10 @@
 </section>
 
  <nav>
-        <ul>
-            <li><a href="#" onclick="reloadIndex()">View All Styles</a></li>
-        </ul>
-    </nav>
+    <ul>
+        <li><button onclick="reloadIndex()">View All Styles</button></li>
+    </ul>
+</nav>
 <main>
    
 <h2>Choose Your Hairstyle</h2>
@@ -236,15 +236,17 @@
 
 <div class="selected-styles" id="selected-styles">
     <form id="appointment-form" action="https://formspree.io/f/xbjnwlrp" method="POST">
-        <h3>Payment Options:</h3>
+        <h3>Check Your $30 Deposit Option:</h3>
         <input type="radio" id="zelle" name="payment" value="zelle">
-        <label for="zelle">Zelle</label><br>
+        <label for="zelle">Zelle to (667) 324-9721</label><br>
+        <input type="radio" id="zelle" name="payment" value="zelle">
+        <label for="zelle">Zelle to areadebisi@gmail.com</label><br>
         <input type="radio" id="cash-app" name="payment" value="cash-app">
-        <label for="cash-app">Cash App</label><br>
-        <h2>Selected Styles</h2>
+        <label for="cash-app">CashApp to (667) 324-9721</label><br>
+        <h3>Styles You Selected</h2>
         <div id="selected-styles-list"></div>
         <p>Total Price: <span id="total-price">$0</span></p>
-        <h2>Book Appointment</h2>
+        <h3>Your Information</h2>
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required><br>
         <label for="email">Email:</label>
@@ -381,10 +383,13 @@ document.getElementById('appointment-form').addEventListener('submit', function(
     // Finally, submit the form
     this.submit(); // This will send a POST request to the form's action URL with all the form data, including hidden inputs
 });
+
+
+// Function to reload the current page
+function reloadIndex() {
+    window.location.reload(); // This will reload the current page
+}
 </script>
-
- 
-
 
 </body>
 </html>
