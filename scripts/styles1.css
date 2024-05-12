@@ -1,289 +1,141 @@
+/* Global styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+}
 
-section {
-    background-color: seagreen;
-    padding: 20px;
+header, footer {
+    background-color: darksalmon;
     color: white;
-    font-weight: bold;
-  }
+    text-align: center;
+    padding: 20px;
+}
 
-  h1 {
-    color: #333;
-    font-size: 28px;
-    margin-bottom: 10px;
-  }
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: left;
+}
 
-  p, ol, ul {
-    color: black;
-    font-size: 20px;
-    line-height: 1.6;
-    margin-bottom: 15px;
-  }
+nav ul li {
+    display: inline;
+    margin-left: 200px;
+}
 
-  ol, ul {
-    margin-left: 30px;
-  }
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 12px;
+    background-color: green;
+    border: 1px solid black;
+    border-radius: 4px;
+}
 
-  li {
-    margin-bottom: 5px;
-  }
+nav ul li a:hover {
+    background-color: #ddd;
+}
 
+/* Section and div styles */
+section, .hair-style, .selected-styles {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
 
 
 .hair-style {
-    margin-bottom: 20px; /* Optional: Add space between each hair style */
-    width: 70%;
-    background-color: skyblue;
     display: flex;
+    width: 50%;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
     align-items: center;
-    margin-left: 15%;
-    border: 2px solid #333; /* Define border */
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.hair-style p {
+.hair-style p, .selected-styles {
     display: none;
-    width: 500px;
-    border-width: 1px;
-    color: brown;
-    background-color: lightgray;
-    margin-right: 40px; /* Optional: Add space between options and button */
-    margin-left: 10px;
+    align-items: left;
 }
 
 .hair-style button {
-    margin-left: auto; /* Push the button to the right */
-    margin-right: 10px; /* Add right margin */
-    background-color: blueviolet;
-    color: white;
+  margin-left: auto;
 }
+
+.hair-style h {
+    margin-top: 0;
+  }
+
+
 
 .selected-styles {
-    display: none; /* Initially hide the element */
-    width: 70%;
-    margin: 20px auto 0; /* Center the element horizontally and add top margin */
-    padding: 10px;
-    border: 2px solid #333; /* Define border */
-    background-color: #f0f0f0; /* Define background color */
-    text-align: center; /* Center text */
-}
-
-header {
-    background-color: pink;
-    color: white;
-    padding: 20px;
+    background-color: #f0f0f0;
     text-align: center;
 }
 
-
-html {
-    height: 100%;
-}
-
-body {
-    margin: 0;
-    padding: 0;
+/* Main container */
+main {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    background-color: deeppink;
-}
-
-.content {
-    flex: 1;
-}
-
-footer {
-    background-color: slategray;
-    color: white;
-    padding: 55px;
-    text-align: center;
-}
-
-.selected-styles {
-    padding: 20px;
-    border: 1px solid #ccc;
-}
-
-.selected-styles h2 {
-    margin-bottom: 10px;
-}
-
-.selected-styles .button-container {
-    margin-bottom: 10px;
-}
-
-.selected-styles button {
-    width: 20%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.selected-styles button:hover {
-    background-color: #0056b3;
-}
-
-
-
-
-
-
-
-/* Media query for smaller screens */
-@media screen and (max-width: 600px) {
-    header {
-        flex-direction: column; /* Change direction to column */
-        align-items: center; /* Center align items */
-    }
-    nav ul {
-        flex-direction: column; /* Change direction to column */
-        align-items: center; /* Center align items */
-        margin-top: 10px; /* Adjust margin for spacing */
-    }
-    nav ul li {
-        margin: 0px 10px; /* Adjust margin for vertical spacing */
-    }
-    nav ul {
-        flex-wrap: wrap; /* Allow flex items to wrap */
-    }
-}
-
-
-
-.hidden {
-    display: none;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: #333;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.content {
-    display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    padding: 20px;
+    min-height: 100vh;
 }
 
-.content div {
-    width: 30%;
-    margin: 10px;
+button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Footer styles */
+footer {
+    background-color: darksalmon;
+    padding: 10px;
     text-align: center;
-    transition: transform 0.3s;
 }
 
-.content div:hover {
-    transform: scale(1.1);
+/* Media Queries for responsiveness */
+@media screen and (max-width: 600px) {
+    header, nav ul {
+        flex-direction: column;
+    }
+
+    .hair-style, .selected-styles {
+        width: 100%;
+    }
 }
 
-#servicesDropdown {  
-    width: 200px; /* Set width as per your preference */
-    padding: 5px; /* Add padding for spacing inside the box */
-    border: 1px solid #ccc; /* Add border for the box */
-    border-radius: 5px; /* Add border radius for rounded corners */
-    background-color: green;
-    color: yellow;
-    margin-right: 300px;
-}
 
-.salon-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 10px 30px;
-}
 
-.salon {
-    width: 30%;
-    padding: 15px;
-    border: 1px solid #ddd;
+input[type="checkbox"], 
+input[type="number"], 
+input[type="radio"], 
+input[type="text"], 
+input[type="email"], 
+input[type="tel"], 
+input[type="date"], 
+select {
+    padding: 8px;
+    margin: 5px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-}
-
-.salon h3, .salon p {
-    margin: 5px 0;
-}
-
-.salon p.full-description {
-    display: none;
-    height: 0;
-}
-
-.salon:hover {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    transform: scale(1.02);
-}
-
-.salon:hover .full-description {
-    display: block;
-    height: auto;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Define keyframes for rainbow effect */
-@keyframes rainbow {
-    0% { color: red; }
-    20% { color: orange; }
-    40% { color: yellow; }
-    60% { color: green; }
-    80% { color: blue; }
-    100% { color: purple; }
-}
-
-/* Apply animation to the heading */
-h1 {
-    animation: rainbow 4s infinite; /* Change the duration or other values to adjust the effect */
-}
-
-
-/* Form submit button */
-#submit button {
-    display: inline-block;
-    padding: 20px 20px;
-    background-color: red;
-    color: red;
-    border: solid;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+ }
 
 
 
-
-/* Header Styles */
-header {
-  background-color: silver; /* Background color */
-  padding: 20px; /* Add some padding */
-  text-align: center; /* Center align the content */
-}
-
-/* Logo Styles */
 #logo {
   max-width: 400px; /* Limit the logo width */
   margin-bottom: 10px; /* Add some space below the logo */
@@ -294,46 +146,3 @@ header {
     width: 500px;
     float: left; /* Added to align the logo to the left */
 }
-
-
-/* Services Dropdown Styles */
-#servicesDropdown {
-  padding: 8px 12px; /* Add padding to the dropdown */
-  font-size: 16px; /* Increase font size */
-  border: 1px solid #ccc; /* Add a border */
-  border-radius: 4px; /* Add border radius */
-  display: inline-block; /* Make the dropdown inline-block */
-  vertical-align: middle; /* Align vertically with other inline elements */
-  margin-left: 20px; /* Add margin on the left for spacing */
-}
-
-/* Link Styles */
-nav ul {
-  display: inline-block; /* Make the list inline-block */
-  vertical-align: middle; /* Align vertically with other inline elements */
-  margin-left: 20px; /* Add margin on the left for spacing */
-}
-
-nav ul li {
-  display: inline-block; /* Display list items horizontally */
-  margin-right: 10px; /* Add some space between list items */
-}
-
-/* Link Styles */
-nav ul li a {
-  text-decoration: none; /* Remove underline */
-  color: yellow; /* Link color */
-  font-weight: bold; /* Make the text bold */
-  padding: 8px 12px; /* Add padding to the links */
-  border: 1px solid #ccc; /* Add a border */
-  border-radius: 4px; /* Add border radius */
-  background-color: green;
-  border-color: black;
-}
-
-/* Link Hover Styles */
-nav ul li a:hover {
-  background-color: #ddd; /* Change background color on hover */
-}
-
-
