@@ -3,393 +3,180 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hair Styling Appointment Booking</title>
-<link rel="stylesheet" href="./scripts/styles1.css">
-<style>
-   
-</style>
+<title>Braids Adore</title>
+<script src="./script.js"></script>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header>
-    <img id="logo" src="./images/logo1.png" alt="Logo">
-    <h1>Contact Us: ☎ (667) 324-9721 | areadebisi@gmail.com</h1>
-</header>
-    
-<section>
-    <h2>Welcome to Braids Adore by Bisi Appointment Booking</h2>
-    <p>To book an appointment, please follow these steps:</p>
-    <ol>
-      <li>Select a hairstyle from the list provided below, along with the corresponding price.</li>
-      <li>Choose a date and time that works for you from the available hourly slots provided on the calendar.</li>
-      <li>A $30 non-refundable deposit is required to secure your appointment. You can pay the deposit through the website using Zelle or Cash App to the phone number (667) 324-9721 or to areadebisi@gmail.com.</li> 
-      <li>Arrive for your appointment with clean, washed and blow-dried hair.</li>
-      <li>Please note that the remaining balance of your hair service should be paid in cash or Zelle.</li>
-    </ol>
-    
-    <p>Instructions:</p>
+    <header>
+       <img id="logo" src="./images/logo1.png" alt="Logo">
+        <p>Welcome To Our Appointment Booking Site</p>
+        <button type="button" onclick="goBackToBookingForm()">Edit Your Inputs</button>
+        <button type="button" onclick="openLoginSignupModal()" style="float: right;">Sign Up / Log In</button>        
+    </header>
+<div class="container">
+    <!-- Choose Your Appointment Section -->
+    <section id="appointmentSection">
+        <h2>Choose Your Style</h2>
+        <div class="styles-grid">
+            <div class="style-card">
+                <img id="log" src="./images/1.png" alt="Logo">
+                <h3>Medium Knotless Braids - $240</h3>
+                <button onclick="openBookingForm('Medium Knotless Braids', 240, ['Waist $40', 'Butt $80', 'Ombré $50', 'Boho $80', 'Boho blend $50'])">Book</button>
+            </div>
+            <!-- More styles as described -->
+            <div class="style-card">
+                <img id="log" src="./images/2 smkb.png" alt="Logo">
+                <h3>Small Medium - $260</h3>
+                <button onclick="openBookingForm('Small Medium', 260, ['Waist $40', 'Butt $80', 'Ombré $50', 'Boho $80', 'Boho blend $50'])">Book</button>
+            </div>
+            <div class="style-card">
+                <img id="log" src="./images/3 eskb.png" alt="Logo">
+                <h3>Small Knotless Braids - $280</h3>
+                <button onclick="openBookingForm('Small Knotless Braids', 280, ['Waist $40', 'Butt $80'])">Book</button>
+            </div>
+            <div class="style-card">
+                <h3>Xtra Small Knotless Braids - $400</h3>
+                <button onclick="openBookingForm('Xtra Small Knotless Braids', 400, ['Waist $80', 'Butt $150'])">Book</button>
+            </div>
+            <div class="style-card">
+                <h3>Large Knotless Braids - $200</h3>
+                <button onclick="openBookingForm('Large Knotless Braids', 200, ['Waist $30', 'Butt $60', 'Boho human $80'])">Book</button>
+            </div>
+            <div class="style-card">
+                <h3>Tribal Braids - $230</h3>
+                <button onclick="openBookingForm('Tribal Braids', 230, ['Waist $50', 'Butt $80', 'Boho human $80', 'Boho blend $50'])">Book</button>
+            </div>
+            <div class="style-card">
+                <h3>Side Braids - $200</h3>
+                <button onclick="openBookingForm('Side Braids', 200, ['Waist $30', 'Butt $60'])">Book</button>
+            </div>
+            <div class="style-card">
+                <h3>Soft Lock - $250</h3>
+                <button onclick="openBookingForm('Soft Lock', 250, [])">Book</button>
+            </div>
+            <div class="style-card">
+                <h3>Kinky Twist - $200</h3>
+                <button onclick="openBookingForm('Kinky Twist', 200, [])">Book</button>
+            </div>
+            <div class="style-card">
+                <h3>Jumbo Knotless - $180</h3>
+                <button onclick="openBookingForm('Jumbo Knotless', 180, ['Butt $200'])">Book</button>
+            </div>
+            <div class="style-card">
+                <h3>Small Straight Back - $180</h3>
+                <button onclick="openBookingForm('Small Straight Back', 180, ['Waist $50', 'Butt $70'])">Book</button>
+            </div>
+            <div class="style-card">
+                <h3>Senegalese Twist Medium Mid Back - $230</h3>
+                <button onclick="openBookingForm('Senegalese Twist Medium Mid Back', 230, ['Waist $40', 'Butt $40'])">Book</button>
+            </div>
+            <div class="style-card">
+                <h3>Bohemian Bob - $290</h3>
+                <button onclick="openBookingForm('Bohemian Bob', 290, ['Human curls, 1 bundles of 100grm $80'])">Book</button>
+            </div>
+            <div class="style-card">
+                <h3>3layers Tribal - $270</h3>
+                <button onclick="openBookingForm('3layers Tribal', 270, ['Waist $50', 'Butt $80'])">Book</button>
+            </div>
+            <div class="style-card">
+                <h3>Small Box Braids - $270</h3>
+                <button onclick="openBookingForm('Small Box Braids', 270, ['Waist $40', 'Butt $80'])">Book</button>
+            </div>
+            <div class="style-card">
+                <h3>Medium Box Braids - $220</h3>
+                <button onclick="openBookingForm('Medium Box Braids', 220, ['Waist $40', 'Butt $80'])">Book</button>
+            </div>
+            <div class="style-card">
+                <h3>Stich - 1 Stitch $20</h3>
+                <button onclick="openBookingForm('Stich', 20, ['6 Stitch $120', '10 Stitch $180'])">Book</button>
+            </div>
+            <div class="style-card">
+                <h3>Small Ponytail - $220</h3>
+                <button onclick="openBookingForm('Small Ponytail', 220, [])">Book</button>
+            </div>
+            <div class="style-card">
+                <h3>Medium Ponytail - $180</h3>
+                <button onclick="openBookingForm('Medium Ponytail', 180, [])">Book</button>
+            </div>
+            <div class="style-card">
+                <h3>Braids Take Out - From $70</h3>
+                <button onclick="openBookingForm('Braids Take Out', 70, [])">Book</button>
+            </div>
+        </div>
+    </section>
+   
+<div id="timeDropdown" style="display:none;">
     <ul>
-      <li>Your hair must be at least 4 inches long.</li>
-      <li>Do not apply a fresh relaxer before your appointment.</li>
-      <li>Do not use any oil in your hair on the day of your appointment.</li>
-      <li>If you need to cancel or reschedule your appointment, please do so at least 72 hours before your scheduled appointment to use your deposit for a future appointment. If you cancel less than 72 hours before your appointment, you will need to pay a new deposit to book again.</li>
-      <li>Please inform us of any known allergies to braiding hair and/or hair products.</li>
+        <li onclick="handleDropdownSelection('confirm')">Confirm Time and Continue</li>
+        <li onclick="handleDropdownSelection('add')">Change The Time</li>
     </ul>
+</div>
+
+  <!-- Hidden fields to store booking details -->
+<input type="hidden" id="selectedStyleDetails" value="Style Details Here">
+<input type="hidden" id="selectedAddons" value="Add-ons Details Here">
+<input type="hidden" id="selectedDate" value="Date Details Here">
+<input type="hidden" id="selectedTime" value="Time Details Here">
+<input type="hidden" id="totalPriceDisplay" value="Price Details Here">
+
+
+    <!-- Booking Form Section (Hidden initially) -->
+    <!-- Booking Form Section (Expanded for Date and Time) -->
+<section id="bookingForm" >
+    <h2>Confirm Your Appointment</h2>
+    <form id="bookingDetails">
+        <div id="selectedStyle">
+            <!-- Filled by JavaScript -->
+        </div>
+        <div id="additionalStyles">
+            <!-- Filled by JavaScript -->
+        </div>
+        
+        <!-- Date and Time Selection -->
+        <div id="dateTime">
+            <h4>Select a Date and Time</h4>
+            <div id="calendar">
+                <!-- Calendar will be generated here -->
+            </div>
+            <div id="timeSlots">
+                <!-- Time slots will be generated here -->
+            </div>
+        </div>
+        </form>
+    </section>
+
+
+<!-- Placeholder for authentication modal actions -->
+<div id="loginSignupModal" style="display:none;">
+    <!-- Modal content for login/signup -->
+</div>
+
+    <section id="userInformation">
+        <div class="form-group" id="userInfo">
+             <h2>Appointment Details</h2>
+            <input type="text" placeholder="First Name" required>
+            <input type="text" placeholder="Last Name" required>
+            <input type="tel" placeholder="Phone Number" required>
+            <input type="email" placeholder="Email" required>
+            
+                <p id="selectedStyleDetails"></p>
+                <p id="selectedAddons"></p>
+                <p id="selectedDate"></p>
+                <p id="selectedTime"></p>
+                <p><strong>Total Price:</strong> $<span id="totalPriceDisplay"></span></p>
+            
+            <div class="instructions">
+            <p>Please provide the required information and make a non-refundable $30 deposit to secure your appointment.</p>
+            <!-- PayPal button will be dynamically inserted here -->
+            <div id="paypalButtonContainer"></div>
+        </div>
+         <button type="submit" style="display: none;" id="confirmButton">Confirm Booking</button>
+    </form>
 </section>
 
- <nav>
-    <ul>
-        <li><button onclick="reloadIndex()">View All Styles</button></li>
-    </ul>
-</nav>
-<main>
-   
-<h2>Choose Your Hairstyle</h2>
-<!-- Expanded Hair Styles Section -->
-<div class="hair-style" id="MKB-style">
-    <h>Medium Knotless Braids</h>
-    <div id="MKB-options">
-        <p><input type="checkbox" id="MKB"> <label for="MKB">Medium Knotless Braids - $240</label><input type="number" id="MKB-quantity" placeholder="quantity"></p>
-        <P>Add to your style</P>
-        <p><input type="checkbox" id="MKB-waist"> <label for="MKB-waist">Waist - $40</label><input type="number" id="MKB-waist-quantity" placeholder="quantity"></p>
-        <p><input type="checkbox" id="MKB-butt"> <label for="MKB-butt">Butt - $80</label><input type="number" id="MKB-butt-quantity" placeholder="quantity"></p>
-        <p><input type="checkbox" id="MKB-ombre"> <label for="MKB-ombre">Ombre - $50</label><input type="number" id="MKB-ombre-quantity" placeholder="quantity"></p>
-        <p><input type="checkbox" id="MKB-boho"> <label for="MKB-boho">Boho - $80</label><input type="number" id="MKB-boho-quantity" placeholder="quantity"></p>
-        <p><input type="checkbox" id="MKB-boho-blend"> <label for="MKB-boho-blend">Boho blend- $50</label><input type="number" id="MKB-boho-blend-quantity" placeholder="quantity"></p>
-    </div>
-    <button onclick="showStyles('MKB-options')">Book Now</button>
 </div>
-
-
-<div class="hair-style" id="SMKB-style">
-    <h>Small Medium Knotless Braids</h>
-    <div id="SMKB-options">
-        <p><input type="checkbox" id="SMKB"> <label for="SMKB">Small Medium Knotless Braids - $260</label><input type="number" id="SMKB-quantity" placeholder="quantity"></p>
-        <p>Add To Your Style</P>
-        <p><input type="checkbox" id="SMKB-waist"> <label for="SMKB-waist">Waist - $40</label><input type="number" id="SMKB-waist-quantity" placeholder="quantity"></p>
-        <p><input type="checkbox" id="SMKB-butt"> <label for="SMKB-butt">Butt - $80</label><input type="number" id="SMKB-butt-quantity" placeholder="quantity"></p>
-        <p><input type="checkbox" id="SMKB-ombre"> <label for="SMKB-ombre">Ombre - $50</label><input type="number" id="SMKB-ombre-quantity" placeholder="quantity"></p>
-        <p><input type="checkbox" id="SMKB-boho"> <label for="SMKB-boho">Boho - $80</label><input type="number" id="SMKB-boho-quantity" placeholder="quantity"></p>
-        <p><input type="checkbox" id="SMKB-boho-blend"> <label for="SMKB-boho-blend">Boho blend- $50</label><input type="number" id="SMKB-boho-blend-quantity" placeholder="quantity"></p>
-    </div>
-     <button onclick="showStyles('SMKB-options')">Book Now</button>
-</div>
-
-<div class="hair-style" id="XSKB-style">
-    <h>Xtra small Knotless Braids</h>
-    <div id="XSKB-options">
-        <p><input type="checkbox" id="XSKB"> <label for="XSKB">Xtra small Knotless Braids - $400</label><input type="number" id="XSKB-quantity" placeholder="quantity"></p>
-        <P>Add to your style</P>
-        <p><input type="checkbox" id="XSKB-waist"> <label for="XSKB-waist">Waist - $80</label><input type="number" id="XSKB-waist-quantity" placeholder="quantity"></p>
-        <p><input type="checkbox" id="XSKB-butt"> <label for="XSKB-butt">Butt - $150</label><input type="number" id="XSKB-butt-quantity" placeholder="quantity"></p>
-    </div>
-    <button onclick="showStyles('XSKB-options')">Book Now</button>
-</div>
-
-
-
-
-<div class="hair-style" id="lmkb-style">
-    <h>Large Knotless Braids</h>
-    <div id="lmkb-options">
-        <p><input type="checkbox" id="LMKB"> <label for="LMKB">Large Knotless Braids - $200</label><input type="number" id="LMKB-quantity" placeholder="quantity"></p>
-        <P>Add to your style</P>
-        <p><input type="checkbox" id="LMKB-waist"> <label for="LMKB-waist">Waist - $30</label><input type="number" id="LMKB-waist-quantity" placeholder="quantity"></p>
-        <p><input type="checkbox" id="LMKB-butt"> <label for="LMKB-butt">Butt - $60</label><input type="number" id="LMKB-butt-quantity" placeholder="quantity"></p>
-        <p><input type="checkbox" id="LMKB-boho"> <label for="LMKB-boho">Boho human - $80</label><input type="number" id="LMKB-boho-quantity" placeholder="quantity"></p>
-    </div>
-    <button onclick="showStyles('lmkb-options')">Book Now</button>
-</div>
-
-<div class="hair-style" id="tb-style">
-    <h>Tribal Braids</h>
-    <div id="tb-options">
-        <p><input type="checkbox" id="TB"> <label for="TB">Tribal Braids - $230</label><input type="number" id="TB-quantity" placeholder="quantity"></p>
-        <P>Add to your style</P>
-        <p><input type="checkbox" id="TB-waist"> <label for="TB-waist">Waist - $50</label><input type="number" id="TB-waist-quantity" placeholder="quantity"></p>
-        <p><input type="checkbox" id="TB-butt"> <label for="TB-butt">Butt - $80</label><input type="number" id="TB-butt-quantity" placeholder="quantity"></p>
-        <p><input type="checkbox" id="TB-boho"> <label for="TB-boho">Boho human - $80</label><input type="number" id="TB-boho-quantity" placeholder="quantity"></p>
-        <p><input type="checkbox" id="TB-boho-blend"> <label for="TB-boho-blend">Boho blend - $50</label><input type="number" id="TB-boho-blend-quantity" placeholder="quantity"></p>
-    </div>
-    <button onclick="showStyles('tb-options')">Book Now</button>
-</div>
-
-<div class="hair-style" id="sb-style">
-    <h>Side Braids</h>
-    <div id="sb-options">
-        <p><input type="checkbox" id="SB"> <label for="SB">Side Braids - $200</label><input type="number" id="SB-quantity" placeholder="quantity"></p>
-        <P>Add to your style</P>
-        <p><input type="checkbox" id="SB-waist"> <label for="SB-waist">Waist - $30</label><input type="number" id="SB-waist-quantity" placeholder="quantity"></p>
-        <p><input type="checkbox" id="SB-butt"> <label for="SB-butt">Butt - $60</label><input type="number" id="SB-butt-quantity" placeholder="quantity"></p>
-    </div>
-    <button onclick="showStyles('sb-options')">Book Now</button>
-</div>
-
-<div class="hair-style" id="soft-lock-style">
-    <h>Soft Lock</h>
-    <div id="soft-lock-options">
-        <p><input type="checkbox" id="Soft-Lock"> <label for="Soft-Lock">Soft lock - $250</label><input type="number" id="Soft-Lock-quantity" placeholder="quantity"></p>
-    </div>
-    <button onclick="showStyles('soft-lock-options')">Book Now</button>
-</div>
-
-<div class="hair-style" id="kinky-twist-style">
-    <h>Kinky twist</h>
-    <div id="kinky-twist-options">
-        <p><input type="checkbox" id="Kinky-twist"> <label for="Kinky-twist">Kinky twist - $250</label><input type="number" id="Kinky-twist-quantity" placeholder="quantity"></p>
-    </div>
-    <button onclick="showStyles('kinky-twist-options')">Book Now</button>
-</div>
-
-<div class="hair-style" id="jumbo-knotless-style">
-    <h>Jumbo knotless</h>
-    <div id="jumbo-knotless-options">
-        <p><input type="checkbox" id="Jumbo-knotless"> <label for="Jumbo-knotless">Jumbo knotless - $180</label><input type="number" id="Jumbo-knotless-quantity" placeholder="quantity"></p>
-        <p><input type="checkbox" id="Jumbo-knotless-butt"> <label for="Jumbo-knotless-butt">Butt - $200</label><input type="number" id="Jumbo-knotless-butt-quantity" placeholder="quantity"></p>
-    </div>
-    <button onclick="showStyles('jumbo-knotless-options')">Book Now</button>
-</div>
-
-<div class="hair-style" id="ssb-style">
-    <h>Small straight back</h>
-    <div id="ssb-options">
-        <p><input type="checkbox" id="SSB"> <label for="SSB">Small straight back - $180</label><input type="number" id="SSB-quantity" placeholder="quantity"></p>
-        <P>Add to your style</P>
-        <p><input type="checkbox" id="SSB-waist"> <label for="SSB-waist">Waist - $50</label><input type="number" id="SSB-waist-quantity" placeholder="quantity"></p>
-        <p><input type="checkbox" id="SSB-butt"> <label for="SSB-butt">Butt - $70</label><input type="number" id="SSB-butt-quantity" placeholder="quantity"></p>
-    </div>
-    <button onclick="showStyles('ssb-options')">Book Now</button>
-</div>
-
-<div class="hair-style" id="st-style">
-    <h>Senegalese Twist</h>
-    <div id="st-options">
-        <p><input type="checkbox" id="ST-medium-mid-back"> <label for="ST-medium-mid-back">Medium mid-back - $230</label><input type="number" id="ST-medium-mid-back-quantity" placeholder="quantity"></p>
-        <P>Add to your style</P>
-        <p><input type="checkbox" id="ST-waist"> <label for="ST-waist">Waist - $40</label><input type="number" id="ST-waist-quantity" placeholder="quantity"></p>
-        <p><input type="checkbox" id="ST-butt"> <label for="ST-butt">Butt - $40</label><input type="number" id="ST-butt-quantity" placeholder="quantity"></p>
-    </div>
-    <button onclick="showStyles('st-options')">Book Now</button>
-</div>
-
-<div class="hair-style" id="Bohemian-bob-style">
-    <h>Bohemian bob</h>
-    <div id="Bohemian-bob-options">
-        <p><input type="checkbox" id="Bohemian-bob"> <label for="Bohemian-bob">Bohemian bob - $290</label><input type="number" id="Bohemian-bob-quantity" placeholder="quantity"></p>
-    </div>
-    <button onclick="showStyles('Bohemian-bob-options')">Book Now</button>
-</div>
-
-<div class="hair-style" id="3LT-style">
-    <h>3 layers tribal</h>
-    <div id="3LT-options">
-        <p><input type="checkbox" id="3LT"> <label for="3LT">3 layers tribal - $270</label><input type="number" id="3LT-quantity" placeholder="quantity"></p>
-        <P>Add to your style</P>
-        <p><input type="checkbox" id="3LT-waist"> <label for="3LT-waist">Waist - $50</label><input type="number" id="3LT-waist-quantity" placeholder="quantity"></p>
-        <p><input type="checkbox" id="3LT-butt"> <label for="3LT-butt">Butt - $80</label><input type="number" id="3LT-butt-quantity" placeholder="quantity"></p>
-    </div>
-    <button onclick="showStyles('3LT-options')">Book Now</button>
-</div>
-
-<div class="hair-style" id="Small-Box-Braids-style">
-    <h>Small Box Braids</h>
-    <div id="Small-Box-Braids-options">
-        <p><input type="checkbox" id="Small-Box-Braids"> <label for="Small-Box-Braids">Small Box Braids - $270</label><input type="number" id="Small-Box-Braids-quantity" placeholder="quantity"></p>
-        <P>Add to your style</P>
-        <p><input type="checkbox" id="Small-Box-Braids-waist"> <label for="Small-Box-Braids-waist">Waist: $40</label><input type="number" id="Small-Box-Braids-waist-quantity" placeholder="quantity"></p>
-        <p><input type="checkbox" id="Small-Box-Braids-butt"> <label for="Small-Box-Braids-butt">Butt: $80</label><input type="number" id="Small-Box-Braids-butt-quantity" placeholder="quantity"></p>
-    </div>
-    <button onclick="showStyles('Small-Box-Braids-options')">Book Now</button>
-</div>
-
-<div class="hair-style" id="Medium-Box-Braids-style">
-    <h>Medium Box Braids</h>
-    <div id="Medium-Box-Braids-options">
-        <p><input type="checkbox" id="Medium-Box-Braids"> <label for="Medium-Box-Braids">Medium Box Braids - $220</label><input type="number" id="Medium-Box-Braids-quantity" placeholder="quantity"></p>
-        <P>Add to your style</P>
-        <p><input type="checkbox" id="Medium-Box-Braids-waist"> <label for="Medium-Box-Braids-waist">Waist: $40</label><input type="number" id="Medium-Box-Braids-waist-quantity" placeholder="quantity"></p>
-        <p><input type="checkbox" id="Medium-Box-Braids-butt"> <label for="Medium-Box-Braids-butt">Butt: $80</label><input type="number" id="Medium-Box-Braids-butt-quantity" placeholder="quantity"></p>
-    </div>
-    <button onclick="showStyles('Medium-Box-Braids-options')">Book Now</button>
-</div>
-
-<div class="hair-style" id="Small-Ponytail-style">
-    <h>Small Ponytail</h>
-    <div id="Small-Ponytail-options">
-        <p><input type="checkbox" id="Small-Ponytail"> <label for="Small-Ponytail">Small Ponytail - $220</label><input type="number" id="Small-Ponytail-quantity" placeholder="quantity"></p>
-        <p><input type="checkbox" id="Small-Ponytail-Medium"> <label for="Small-Ponytail-Medium">Medium: $180</label><input type="number" id="Small-Ponytail-Medium-quantity" placeholder="quantity"></p>
-    </div>
-    <button onclick="showStyles('Small-Ponytail-options')">Book Now</button>
-</div>
- 
-
-<div class="hair-style" id="stich-style">
-    <h>Stich</h>
-    <div id="stich-options">
-        <p><input type="checkbox" id="1-stich"> <label for="1-stich">1 stich: $20</label><input type="number" id="1-stich-quantity" placeholder="quantity"></p>
-        <p><input type="checkbox" id="6-stich"> <label for="6-stich">6 stich: $120</label><input type="number" id="6-stich-quantity" placeholder="quantity"></p>
-        <p><input type="checkbox" id="10-stich"> <label for="10-stich">10 stich: $180</label><input type="number" id="10-stich-quantity" placeholder="quantity"></p>
-    </div>
-    <button onclick="showStyles('stich-options')">Book Now</button>
-</div>
-
-
-<div class="selected-styles" id="selected-styles">
-    <form id="appointment-form" action="https://formspree.io/f/xbjnwlrp" method="POST">
-        <h3>Check Your $30 Deposit Option:</h3>
-        <input type="radio" id="zelle" name="payment" value="zelle">
-        <label for="zelle">Zelle to (667) 324-9721</label><br>
-        <input type="radio" id="zelle" name="payment" value="zelle">
-        <label for="zelle">Zelle to areadebisi@gmail.com</label><br>
-        <input type="radio" id="cash-app" name="payment" value="cash-app">
-        <label for="cash-app">CashApp to (667) 324-9721</label><br>
-        <h3>Styles You Selected</h2>
-        <div id="selected-styles-list"></div>
-        <p>Total Price: <span id="total-price">$0</span></p>
-        <h3>Your Information</h2>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br>
-        <label for="phone">Phone:</label>
-        <input type="tel" id="phone" name="phone" required><br>
-        <label for="date">Date:</label>
-        <input type="date" id="date" name="date" required><br>
-        <label for="time">Time:</label>
-        <select id="time" name="time" required></select><br>
-        <button type="submit">Submit Appointment</button> 
-    </form>
-</div>
-</main>
-
-<footer>
-    <p>Contact us at areadebisi@gmail.com</p>
-</footer>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
- function showStyles(optionsId) {
-  // Hide all input options
-  const optionsDivs = document.querySelectorAll('.hair-style p');
-  optionsDivs.forEach(function(option) {
-    option.style.display = 'none';
-  });
-  
-  // Show the input options for the selected style
-  const styleOptions = document.getElementById(optionsId);
-  styleOptions.querySelectorAll('p').forEach(function(option) {
-    option.style.display = 'block';
-  });
-  
-  // Show the selected styles div
-  document.getElementById('selected-styles').style.display = 'block';
-  
-  // Update button text and functionality
-  const bookNowButton = styleOptions.parentNode.querySelector("button");
-  bookNowButton.innerHTML = "Confirm Selection(s)";
-  bookNowButton.style.backgroundColor = "red";
-  bookNowButton.onclick = function() { 
-    confirmSelection(optionsId);
-    // Hide all other divs after confirming selection
-    const allOptionsDivs = document.querySelectorAll('.hair-style');
-    allOptionsDivs.forEach(function(div) {
-      if (div.id !== optionsId) {
-        div.style.display = 'none';
-      }
-    });
-  };
-}
-
-
-    function calculateTotal() {
-        let checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
-        let totalPrice = 0;
-        
-        checkboxes.forEach(function(checkbox) {
-            let price = parseInt(checkbox.parentElement.textContent.match(/\d+/)[0]);
-            let quantity = parseInt(document.getElementById(checkbox.id + '-quantity').value);
-            totalPrice += price * quantity;
-        });
-        
-        document.getElementById('total-price').textContent = `$${totalPrice}`;
-    }
-
-    function confirmSelection() {
-        let selectedStyles = document.querySelectorAll('input[type=checkbox]:checked');
-        let selectedStylesList = document.getElementById('selected-styles-list');
-        let totalPrice = 0;
-
-        selectedStylesList.innerHTML = ''; // Clear previous selections
-
-        selectedStyles.forEach(function(style) {
-            let price = parseInt(style.parentElement.textContent.match(/\d+/)[0]);
-            let quantity = parseInt(document.getElementById(style.id + '-quantity').value);
-            totalPrice += price * quantity;
-            let listItem = document.createElement('p');
-            listItem.textContent = `${style.parentElement.textContent.replace(/\d+/, '$')}, Quantity: ${quantity}`;
-            selectedStylesList.appendChild(listItem);
-        });
-
-        document.getElementById('total-price').textContent = `$${totalPrice}`;
-    }
-
-    
-    function populateAppointmentTimes() {
-    const selectedDate = new Date(document.getElementById('date').value);
-    const availableTimes = getAvailableAppointmentTimes(selectedDate);
-
-    const timeSelect = document.getElementById('time');
-    timeSelect.innerHTML = '';
-
-    availableTimes.forEach(time => {
-        const option = document.createElement('option');
-        option.text = time;
-        timeSelect.add(option);
-    });
-}
-
-function getAvailableAppointmentTimes(selectedDate) {
-    // Logic to fetch available appointment times for the selected date
-    // This can involve querying a server/database or calculating based on existing bookings
-    // Return an array of available times, e.g., ['6:00 AM', '7:00 AM', ...]
-    return ['6:00 AM', '7:00 AM', '8:00 AM', '9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM', '6:00 PM'];
-}
-
-document.getElementById('date').addEventListener('change', populateAppointmentTimes);
-</script>
-
-<script>
-document.getElementById('appointment-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the default form submission to handle it with JavaScript
-
-    // Update the hidden input for selected styles
-    const selectedStylesList = document.getElementById('selected-styles-list').innerText;
-    const selectedStylesInput = document.createElement('input');
-    selectedStylesInput.type = 'hidden';
-    selectedStylesInput.name = 'selectedStyles';
-    selectedStylesInput.value = selectedStylesList;
-    this.appendChild(selectedStylesInput);
-
-    // Update the hidden input for total price
-    const totalPrice = document.getElementById('total-price').innerText;
-    const totalPriceInput = document.createElement('input');
-    totalPriceInput.type = 'hidden';
-    totalPriceInput.name = 'totalPrice';
-    totalPriceInput.value = totalPrice;
-    this.appendChild(totalPriceInput);
-
-    // Optionally, you can include any other additional data as hidden inputs in a similar way
-
-    // Finally, submit the form
-    this.submit(); // This will send a POST request to the form's action URL with all the form data, including hidden inputs
-});
-
-
-// Function to reload the current page
-function reloadIndex() {
-    window.location.reload(); // This will reload the current page
-}
-</script>
 
 </body>
 </html>
