@@ -1,31 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Braids Adore</title>
-<script src="./script.js"></script>
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Booking</title>
+    <style>
+        
+   /* General body and HTML styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+}
+
+/* Header styling, including the logo */
+header {
+    background: saddlebrown;
+    color: #fff;
+    padding: 20px 0;
+    text-align: left;
+    position: relative;
+}
+
+#logo {
+    max-width: 400px;
+    display: block;
+    margin-top: 0;
+    margin-right: 30px;
+    float: left;
+}
+
+/* Container styling */
+.container {
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Grid of styles */
+.styles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.style-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.style-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Button styling */
+button {
+    color: white;
+    background-color: darkred;
+    border: 1px solid darkred;
+    border-radius: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #a30000;
+}
+
+/* Input field styling */
+input[type="text"], input[type="email"], input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Booking section styling */
+#bookingSection {
+    display: none;
+    align-content: center;
+  }
+
+#booking {
+    display: block;
+    align-content: center;
+}
+
+/* Calendar and time container styling */
+#calendar-container, #time-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    margin-bottom: 20px;
+    padding: 4%;
+}
+
+/* Calendar and time grid styling */
+#calendar, .time-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    width: 50%;
+}
+
+/* Calendar days and time slots styling */
+#calendar > div, .time-slot {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+/* Interactive elements styling */
+.day, .time-slot {
+    cursor: pointer;
+}
+
+.day:hover, .time-slot:hover {
+    background-color: #f0f0f0;
+}
+
+.day.selected, .time-slot.selected {
+    background-color: #add8e6;
+}
+
+.time-slot.unavailable {
+    filter: blur(2px);
+    pointer-events: none;
+}
+
+
+
+/* Form styling */
+form {
+    display: none;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: 50%;
+    margin-left: 25%;
+}
+
+form > div {
+    grid-column: span 1;
+}
+
+
+/* Confirmation container styling */
+#confirmation-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+#confirmationDetails {
+    margin-left: 25%;
+    border: 1 solid;
+}
+
+#confirmationForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid;
+    width: 50%;
+}
+    </style>
 </head>
 <body>
-
     <header>
-       <img id="logo" src="./images/logo1.png" alt="Logo">
+        <img id="logo" src="./images/logo1.png" alt="Logo">
         <p>Welcome To Our Appointment Booking Site</p>
         <button type="button" onclick="goBackToBookingForm()">Edit Your Inputs</button>
-        <button type="button" onclick="openLoginSignupModal()" style="float: right;">Sign Up / Log In</button>        
+        <button type="button" onclick="openLoginSignupModal()" style="float: right;">Sign Up / Log In</button>
+        <button type="button" onclick="home()" style="float: left;">Home</button>
     </header>
-<div class="container">
-    <!-- Choose Your Appointment Section -->
-    <section id="appointmentSection">
-        <h2>Choose Your Style</h2>
-        <div class="styles-grid">
-            <div class="style-card">
-                <img id="log" src="./images/1.png" alt="Logo">
-                <h3>Medium Knotless Braids - $240</h3>
-                <button onclick="openBookingForm('Medium Knotless Braids', 240, ['Waist $40', 'Butt $80', 'Ombré $50', 'Boho $80', 'Boho blend $50'])">Book</button>
-            </div>
-            <!-- More styles as described -->
+    <div class="container">
+        <section id="appointmentSection">
+            <h2>Choose Your Style</h2>
+            <div class="styles-grid">
+                <div class="style-card">
+                    <img id="log" src="./images/1.png" alt="Logo">
+                    <h3>Medium Knotless Braids - $240</h3>
+                    <button onclick="openBookingForm('Medium Knotless Braids', 240, ['Waist $40', 'Butt $80', 'Ombré $50', 'Boho $80', 'Boho blend $50'])">Book</button>
+                </div>
+                <!-- More styles as described -->
+                <!-- Add more style cards here -->
             <div class="style-card">
                 <img id="log" src="./images/2 smkb.png" alt="Logo">
                 <h3>Small Medium - $260</h3>
@@ -113,70 +282,230 @@
         <li onclick="handleDropdownSelection('add')">Change The Time</li>
     </ul>
 </div>
-
-  <!-- Hidden fields to store booking details -->
-<input type="hidden" id="selectedStyleDetails" value="Style Details Here">
-<input type="hidden" id="selectedAddons" value="Add-ons Details Here">
-<input type="hidden" id="selectedDate" value="Date Details Here">
-<input type="hidden" id="selectedTime" value="Time Details Here">
-<input type="hidden" id="totalPriceDisplay" value="Price Details Here">
-
-
-    <!-- Booking Form Section (Hidden initially) -->
-    <!-- Booking Form Section (Expanded for Date and Time) -->
-<section id="bookingForm" >
-    <h2>Confirm Your Appointment</h2>
-    <form id="bookingDetails">
-        <div id="selectedStyle">
-            <!-- Filled by JavaScript -->
-        </div>
-        <div id="additionalStyles">
-            <!-- Filled by JavaScript -->
-        </div>
-        
-        <!-- Date and Time Selection -->
-        <div id="dateTime">
-            <h4>Select a Date and Time</h4>
-            <div id="calendar">
-                <!-- Calendar will be generated here -->
-            </div>
-            <div id="timeSlots">
-                <!-- Time slots will be generated here -->
-            </div>
-        </div>
-        </form>
-    </section>
-
-
-<!-- Placeholder for authentication modal actions -->
-<div id="loginSignupModal" style="display:none;">
-    <!-- Modal content for login/signup -->
-</div>
-
-    <section id="userInformation">
-        <div class="form-group" id="userInfo">
-             <h2>Appointment Details</h2>
-            <input type="text" placeholder="First Name" required>
-            <input type="text" placeholder="Last Name" required>
-            <input type="tel" placeholder="Phone Number" required>
-            <input type="email" placeholder="Email" required>
-            
-                <p id="selectedStyleDetails"></p>
-                <p id="selectedAddons"></p>
-                <p id="selectedDate"></p>
-                <p id="selectedTime"></p>
-                <p><strong>Total Price:</strong> $<span id="totalPriceDisplay"></span></p>
-            
-            <div class="instructions">
-            <p>Make a non-refundable $30 deposit to secure your appointment.</p>
-            <!-- PayPal button will be dynamically inserted here -->
-            <div id="paypalButtonContainer"></div>
-        </div>
-         <button type="submit" style="display: none;" id="confirmButton">Confirm Booking</button>
-    </form>
+  </div>
 </section>
 
-</div>
+        <section id="bookingSection">
+           <form id="booking">
+            <h2>Booking Details</h2>
+            <div id="selectedStyle"></div>
+            <div id="addOns"></div>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" value="1" min="1" onchange="updateQuantity()">
+            <p>Total Price: $<span id="totalPrice"></span></p>
+            <div id="calendar-container">
+                <h3>Select The Date And The Time</h3>
+                <div class="header">
+                    <button onclick="navigateCalendar(-1)">&#8592;</button>
+                    <span id="month-year"></span>
+                    <button onclick="navigateCalendar(1)">&#8594;</button>
+                </div>
+                <div id="calendar"></div>
+            </div>
+            <div id="time-container" class="time-container">
+            <div id="time-grid" class="time-grid"></div>
+            </div>
+        </form>
+        </section>
+        
+        <section id="info-container">
+               <form id="infoForm">
+                <h3>Your Information</h3>
+                <input type="text" id="firstName" placeholder="First Name" required>
+                <input type="text" id="lastName" placeholder="Last Name" required>
+                <input type="tel" id="phone" placeholder="Phone Number" required pattern="[0-9]{10}">
+                <input type="email" id="email" placeholder="Email Address" required>
+                <div>
+                    <button type="button" onclick="confirmInformation()">Confirm</button>
+                </div>
+            </form>
+        </section>
+        <section id="confirmation-container" action="https://formspree.io/f/xbjnwlrp" method="POST">
+            <h3>Confirmation</h3>
+            <form id="confirmationForm">
+                <div id="confirmationDetails"></div>
+          </form>
+            <button type="submit">Submit</button>
+        </section>
+    </div>
 
+    <script>
+        let currentMonth = new Date().getMonth();
+        let currentYear = new Date().getFullYear();
+        let selectedDate = null;
+
+        const timeSlots = [
+            "6:00 AM", "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM",
+            "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM"
+        ];
+
+        function openBookingForm(style, price, addOns) {
+            sessionStorage.setItem('selectedStyle', style);
+            sessionStorage.setItem('stylePrice', price);
+            sessionStorage.setItem('quantity', 1);
+            sessionStorage.setItem('addOns', JSON.stringify(addOns));
+
+            document.getElementById('appointmentSection').style.display = 'none';
+            document.getElementById('bookingSection').style.display = 'block';
+
+            document.getElementById('selectedStyle').innerText = `Style: ${style} - $${price}`;
+            document.getElementById('totalPrice').innerText = price;
+            populateAddOns(addOns);
+        }
+
+        function populateAddOns(addOns) {
+            const addOnsContainer = document.getElementById('addOns');
+            addOnsContainer.innerHTML = '<h3>Add-Ons</h3>';
+            addOns.forEach(addOn => {
+                const addOnPrice = addOn.split(' $')[1];
+                addOnsContainer.innerHTML += `<label><input type="checkbox" value="${addOnPrice}" onchange="updateAddOns()"> ${addOn}</label><br>`;
+            });
+        }
+
+        function updateAddOns() {
+            const checkboxes = document.querySelectorAll('#addOns input[type="checkbox"]');
+            let totalPrice = parseFloat(sessionStorage.getItem('stylePrice'));
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    totalPrice += parseFloat(checkbox.value);
+                }
+            });
+            const quantity = parseInt(sessionStorage.getItem('quantity'));
+            totalPrice *= quantity;
+            sessionStorage.setItem('totalPrice', totalPrice);
+            document.getElementById('totalPrice').innerText = totalPrice;
+        }
+
+        function updateQuantity() {
+            const quantity = document.getElementById('quantity').value;
+            sessionStorage.setItem('quantity', quantity);
+            updateAddOns();
+        }
+
+        function navigateCalendar(direction) {
+            currentMonth += direction;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            } else if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            generateCalendar(currentMonth, currentYear);
+        }
+   
+
+        function generateCalendar(month, year) {
+    const calendarDiv = document.getElementById('calendar');
+    const monthYearSpan = document.getElementById('month-year');
+    const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const firstDayOfMonth = new Date(year, month, 1).getDay();
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+                        "July", "August", "September", "October", "November", "December"];
+
+    let htmlContent = daysOfWeek.map(day => `<div>${day}</div>`).join('');
+    htmlContent += `<div style="grid-column-start: ${firstDayOfMonth + 1};"></div>`; // Offset start
+
+    for (let day = 1; day <= daysInMonth; day++) {
+        htmlContent += `<div class="day" onclick="selectDay(this, ${day}, ${month + 1}, ${year})">${day}</div>`;
+    }
+
+    monthYearSpan.textContent = `${monthNames[month]} ${year}`;
+    calendarDiv.innerHTML = htmlContent;
+}
+
+function selectDay(element, day, month, year) {
+    selectedDate = `${month}/${day}/${year}`;
+    sessionStorage.setItem('selectedDate', selectedDate);
+    //alert(`Selected date: ${selectedDate}`);
+    generateTimeGrid(selectedDate);
+
+    const days = document.querySelectorAll('.day');
+    days.forEach(dayElem => dayElem.classList.remove('selected'));
+    element.classList.add('selected');
+}
+
+function generateTimeGrid(date) {
+    const timeGrid = document.getElementById('time-grid');
+    const selectedTimes = JSON.parse(sessionStorage.getItem('selectedTimes')) || {};
+    const unavailable = selectedTimes[date] || [];
+    let htmlContent = timeSlots.map(time => {
+        const isUnavailable = unavailable.includes(time);
+        return `<div class="time-slot ${isUnavailable ? 'unavailable' : ''}" onclick="selectTimeSlot(this, '${date}', '${time}')">${time}</div>`;
+    }).join('');
+    timeGrid.innerHTML = htmlContent;
+}
+
+function selectTimeSlot(element, date, time) {
+    const selectedTimes = JSON.parse(sessionStorage.getItem('selectedTimes')) || {};
+    if (!selectedTimes[date]) {
+        selectedTimes[date] = [];
+    }
+    selectedTimes[date].push(time);
+    sessionStorage.setItem('selectedTimes', JSON.stringify(selectedTimes));
+    element.classList.add('selected');
+    element.classList.add('unavailable');
+    element.onclick = null;
+
+    document.getElementById('infoForm').style.display = 'grid';
+}
+
+function confirmInformation() {
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const phone = document.getElementById('phone').value;
+    const email = document.getElementById('email').value;
+
+    if (firstName && lastName && phone && email) {
+        sessionStorage.setItem('firstName', firstName);
+        sessionStorage.setItem('lastName', lastName);
+        sessionStorage.setItem('phone', phone);
+        sessionStorage.setItem('email', email);
+
+        document.getElementById('calendar-container').style.display = 'none';
+        document.getElementById('time-container').style.display = 'none';
+        document.getElementById('info-container').style.display = 'none';
+
+        const selectedDate = sessionStorage.getItem('selectedDate');
+        const selectedTimes = JSON.parse(sessionStorage.getItem('selectedTimes'));
+        const selectedTime = selectedTimes[selectedDate][selectedTimes[selectedDate].length - 1];
+        
+        const confirmationDetails = document.getElementById('confirmationDetails');
+        confirmationDetails.innerHTML = `
+            <p>Selected Date: ${selectedDate}</p>
+            <p>Selected Time: ${selectedTime}</p>
+            <p>First Name: ${firstName}</p>
+            <p>Last Name: ${lastName}</p>
+            <p>Phone: ${phone}</p>
+            <p>Email: ${email}</p>
+        `;
+
+        document.getElementById('confirmation-container').style.display = 'flex';
+    } else {
+        alert('Please fill in all the fields correctly.');
+    }
+}
+
+function goBackToBookingForm() {
+    document.getElementById('calendar-container').style.display = 'flex';
+    document.getElementById('time-container').style.display = 'flex';
+    document.getElementById('info-container').style.display = 'flex';
+    document.getElementById('confirmation-container').style.display = 'none';
+}
+
+function home() {
+    window.location.href = 'index.html';
+}
+
+function openLoginSignupModal() {
+    // Implement the logic to open the login/signup modal
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    generateCalendar(currentMonth, currentYear);
+});
+</script>
 </body>
 </html>
+        
