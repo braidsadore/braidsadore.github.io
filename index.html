@@ -321,7 +321,7 @@ form > div {
             </form>
         </section>
        
-       <section id="confirmation-container">
+    <section id="confirmation-container">
     <h3>Confirmation</h3>
     <form id="confirmationForm" action="https://formspree.io/f/xbjnwlrp" method="POST">
         <div id="confirmationDetails">
@@ -338,6 +338,7 @@ form > div {
         <button type="button" onclick="submitConfirmationForm()">Submit</button>
     </form>
 </section>
+
 </div>
 
     <script>
@@ -538,6 +539,8 @@ function submitConfirmationForm() {
         'firstName', 'lastName', 'phoneNumber', 'email'
     ];
 
+    let formIsValid = true;
+
     dataKeys.forEach(key => {
         const value = sessionStorage.getItem(key);
         if (value) {
@@ -546,8 +549,15 @@ function submitConfirmationForm() {
             hiddenInput.name = key;
             hiddenInput.value = value;
             form.appendChild(hiddenInput);
+        } else {
+            formIsValid = false;
         }
     });
+
+    if (!formIsValid) {
+        alert('Please ensure all required fields are filled.');
+        return;
+    }
 
     const formData = new FormData(form);
 
@@ -576,6 +586,7 @@ function submitConfirmationForm() {
         alert('Form submission failed.');
     });
 }
+
 
 
 
