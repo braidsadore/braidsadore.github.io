@@ -320,14 +320,25 @@ form > div {
                 </div>
             </form>
         </section>
-        <section id="confirmation-container">
-            <h3>Confirmation</h3>
-            <form id="confirmationForm" action="https://formspree.io/f/xbjnwlrp" method="POST">
-                <div id="confirmationDetails"></div>
-                 <button type="submit">Submit</button>
-          </form>
-         </section>
-    </div>
+       
+       <section id="confirmation-container">
+    <h3>Confirmation</h3>
+    <form id="confirmationForm" action="https://formspree.io/f/xbjnwlrp" method="POST">
+        <div id="confirmationDetails">
+            <p id="selectedStyle"></p>
+            <p id="quantity"></p>
+            <p id="price"></p>
+            <p id="selectedAddOns"></p>
+            <p id="totalPrice"></p>
+            <p id="firstName"></p>
+            <p id="lastName"></p>
+            <p id="phoneNumber"></p>
+            <p id="email"></p>
+        </div>
+        <button type="button" onclick="submitConfirmationForm()">Submit</button>
+    </form>
+</section>
+</div>
 
     <script>
         let currentMonth = new Date().getMonth();
@@ -487,8 +498,57 @@ function confirmInformation() {
     }
 }
 
+
+// Function to display data from session storage
+function displayDataFromSessionStorage() {
+    const dataMapping = {
+        selectedStyle: 'Selected Style: ',
+        quantity: 'Quantity: ',
+        price: 'Price: ',
+        selectedAddOns: 'Selected Add-ons: ',
+        totalPrice: 'Total Price: ',
+        firstName: 'First Name: ',
+        lastName: 'Last Name: ',
+        phoneNumber: 'Phone Number: ',
+        email: 'Email: '
+    };
+
+    for (const [key, label] of Object.entries(dataMapping)) {
+        const value = sessionStorage.getItem(key);
+        if (value) {
+            document.getElementById(key).textContent = label + value;
+        }
+    }
+}
+
+// Call the function to display data when the page loads
+window.onload = displayDataFromSessionStorage;
+
 function submitConfirmationForm() {
     const form = document.getElementById('confirmationForm');
+
+    // Clear any previously added hidden fields
+    const existingHiddenInputs = form.querySelectorAll('input[type="hidden"]');
+    existingHiddenInputs.forEach(input => input.remove());
+
+    // Add session storage items to the form as hidden fields
+    const dataKeys = [
+        'selectedStyle', 'quantity', 'price', 
+        'selectedAddOns', 'totalPrice', 
+        'firstName', 'lastName', 'phoneNumber', 'email'
+    ];
+
+    dataKeys.forEach(key => {
+        const value = sessionStorage.getItem(key);
+        if (value) {
+            const hiddenInput = document.createElement('input');
+            hiddenInput.type = 'hidden';
+            hiddenInput.name = key;
+            hiddenInput.value = value;
+            form.appendChild(hiddenInput);
+        }
+    });
+
     const formData = new FormData(form);
 
     fetch(form.action, {
@@ -516,6 +576,7 @@ function submitConfirmationForm() {
         alert('Form submission failed.');
     });
 }
+
 
 
 
