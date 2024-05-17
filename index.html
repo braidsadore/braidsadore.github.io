@@ -324,9 +324,8 @@ form > div {
             <h3>Confirmation</h3>
             <form id="confirmationForm">
                 <div id="confirmationDetails"></div>
-                <button type="submit">Submit</button>
           </form>
-            
+            <button type="submit">Submit</button>
         </section>
     </div>
 
@@ -487,6 +486,44 @@ function confirmInformation() {
         alert('Please fill in all the fields correctly.');
     }
 }
+
+function submitConfirmationSection() {
+    const confirmationContainer = document.getElementById('confirmation-container');
+    const inputs = confirmationContainer.querySelectorAll('input, textarea, select');
+    const formData = new FormData();
+
+    inputs.forEach(input => {
+        formData.append(input.name, input.value);
+    });
+
+    const form = document.getElementById('confirmationForm');
+    fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Form submitted successfully!');
+        } else {
+            response.json().then(data => {
+                if (data.errors) {
+                    alert('Form submission failed: ' + data.errors.map(error => error.message).join(', '));
+                } else {
+                    alert('Form submission failed.');
+                }
+            });
+        }
+    })
+    .catch(error => {
+        console.error('Error submitting the form:', error);
+        alert('Form submission failed.');
+    });
+}
+
+
 
 function goBackToBookingForm() {
     document.getElementById('calendar-container').style.display = 'flex';
