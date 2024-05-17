@@ -322,11 +322,11 @@ form > div {
         </section>
         <section id="confirmation-container" action="https://formspree.io/f/xbjnwlrp" method="POST">
             <h3>Confirmation</h3>
-            <form id="confirmationForm">
+            <form id="confirmationForm" action="https://formspree.io/f/xbjnwlrp" method="POST">
                 <div id="confirmationDetails"></div>
+                 <button type="submit">Submit</button>
           </form>
-            <button type="submit">Submit</button>
-        </section>
+         </section>
     </div>
 
     <script>
@@ -487,16 +487,10 @@ function confirmInformation() {
     }
 }
 
-function submitConfirmationSection() {
-    const confirmationContainer = document.getElementById('confirmation-container');
-    const inputs = confirmationContainer.querySelectorAll('input, textarea, select');
-    const formData = new FormData();
-
-    inputs.forEach(input => {
-        formData.append(input.name, input.value);
-    });
-
+function submitConfirmationForm() {
     const form = document.getElementById('confirmationForm');
+    const formData = new FormData(form);
+
     fetch(form.action, {
         method: form.method,
         body: formData,
