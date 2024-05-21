@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Braids Adore</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f8f8;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        section {
+            padding: 10px;
+            margin: 20px auto;
+            width: 80%;
+            border: 1px solid #ddd;
+        }
+        
+        #booking-details {
+            padding: 10px;
+            margin: 20px auto;
+            width: 40%;
+            border: 1px solid #ddd;
+        }
+
+
+        .booking-form label, 
+        .booking-form input, 
+        .booking-form select, 
+        .booking-form button {
+            display: block;
+            margin: 6px 0;
+        }
+        .booking-form input, 
+        .booking-form select, 
+        .booking-form button {
+            padding: 10px;
+            width: 95%;
+        }
+        .booking-form button {
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .booking-form button:hover {
+            background-color: #555;
+        }
+        .highlighted {
+            background-color: yellow;
+        }
+        .addons {
+            margin: 2px 0;
+        }
+        /* Appointment Section */
+        .hairstylesSection {
+            display: grid;
+            gap: 20px;
+        }
+   
+.styles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.style-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.style-card img {
+    width: 100%;
+    height: auto;
+}
+
+.style-card h3 {
+    margin: 0;
+    padding: 10px;
+    background-color: #f4f4f4;
+}
+
+.style-card button {
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.style-card button:hover {
+    background-color: #218838;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>               
+                <img id="logo" src="./images/logo1.png" alt="Logo">
+                <li><a href="#login">Login</a></li>
+                <li><a href="#signup">Sign Up</a></li>
+                <button type="button" onclick="home()">Home</button>
+                <button type="button" onclick="goBackToBookingForm()">Edit Your Inputs</button>        
+            </ul>
+        </nav>         
+    </header>
+
+    <section class="hairstylesSection" id="hairstyles">
+       <h2>Welcome To Our Appointment Booking Site, Choose Your Favorite Hairstyle</h2>
+        <div class="styles-grid">
+            <div class="style-card" data-style="Medium Knotless Braids" data-price="240" data-addons='{"Waist": 40, "Butt": 80, "Ombré": 50, "Boho": 80, "Boho blend": 50}'>
+                <img src="./images/01.webp" alt="Logo">
+                <h3>Medium Knotless Braids $240</h3>
+                <button class="book">Book</button>
+            </div>
+           
+            <div class="style-card" data-style="Small Medium" data-price="260" data-addons='{"Waist": 40, "Butt": 80, "Ombré": 50, "Boho": 80, "Boho blend": 50}'>
+                <img src="./images/02.webp" alt="Logo">
+                <h3>Small Medium $260</h3>
+                <button class="book">Book</button>
+            </div>
+            
+            <div class="style-card" data-style="Small Knotless Braids" data-price="280" data-addons='{"Waist": 40, "Butt": 80}'>
+               <img src="./images/03.webp" alt="Logo">
+                <h3>Small Knotless Braids $280</h3>
+                <button class="book">Book</button>
+            </div>
+            <div class="style-card" data-style="Xtra Small Knotless Braids" data-price="400" data-addons='{"Waist": 80, "Butt": 150}'>
+               <img src="./images/04.webp" alt="Logo">
+                <h3>Xtra Small Knotless Braids $400</h3>
+                <button class="book">Book</button>
+            </div>
+            <div class="style-card" data-style="Large Knotless Braids" data-price="200" data-addons='{"Waist": 30, "Butt": 60, "Boho human": 80}'>
+                 <img src="./images/05.webp" alt="Large Knotless Braids">
+                <h3>Large Knotless Braids $200</h3>
+                <button class="book">Book</button>
+            </div>
+            <div class="style-card" data-style="Tribal braids" data-price="230" data-addons='{"Waist": 50, "Butt": 80, "Boho human": 80, "Boho blend": 50}'>
+                <img src="./images/06.webp" alt="Tribal braids">
+                <h3>Tribal braids $230</h3>
+                <button class="book">Book</button>
+            </div>
+            <div class="style-card" data-style="Side braids" data-price="200" data-addons='{"Waist": 30, "Butt": 60}'>
+                <img src="./images/07.webp" alt="Side braids">
+                <h3>Side braids $200</h3>
+                <button class="book">Book</button>
+            </div>
+            <div class="style-card" data-style="Soft Lock" data-price="250" data-addons='{}'>
+                <img src="./images/08.webp" alt="Soft Lock">
+                <h3>Soft Lock $250</h3>
+                <button class="book">Book</button>
+            </div>
+            <div class="style-card" data-style="Kinky twist" data-price="200" data-addons='{}'>
+                <img src="./images/09.webp" alt="Kinky twist">
+                <h3>Kinky twist $200</h3>
+                <button class="book">Book</button>
+            </div>
+            <div class="style-card" data-style="Jumbo knotless" data-price="180" data-addons='{"Butt": 200}'>
+                <img src="./images/10.webp" alt="Jumbo knotless">
+                <h3>Jumbo knotless $180</h3>
+                <button class="book">Book</button>
+            </div>
+            <div class="style-card" data-style="Small straight back" data-price="180" data-addons='{"Waist": 50, "Butt": 70}'>
+                <img src="./images/11.webp" alt="Small straight back">
+                <h3>Small straight back $180</h3>
+                <button class="book">Book</button>
+            </div>
+            <div class="style-card" data-style="Senegalese twist" data-price="230" data-addons='{"Waist": 40, "Butt": 40}'>
+                <img src="./images/12.webp" alt="Senegalese twist">
+                <h3>Senegalese twist $230</h3>
+                <button class="book">Book</button>
+            </div>
+            <div class="style-card" data-style="Bohemian bob" data-price="290" data-addons='{"Human curls , 1 bundles of 100grm": 80}'>
+                <img src="./images/13.webp" alt="Bohemian bob">
+                <h3>Bohemian bob $290</h3>
+                <button class="book">Book</button>
+            </div>
+            <div class="style-card" data-style="3 layers tribal" data-price="270" data-addons='{"Waist": 50, "Butt": 80}'>
+                <img src="./images/14.webp" alt="3 layers tribal">
+                <h3>3 layers tribal $270</h3>
+                <button class="book">Book</button>
+            </div>
+            <div class="style-card" data-style="Small box braids" data-price="270" data-addons='{"Waist": 40, "Butt": 80}'>
+                <img src="./images/15.webp" alt="Small box braids">
+                <h3>Small box braids $270</h3>
+                <button class="book">Book</button>
+            </div>
+            <div class="style-card" data-style="Medium box braids" data-price="220" data-addons='{"Waist": 40, "Butt": 80}'>
+                <img src="./images/16.webp" alt="Medium box braids">
+                <h3>Medium box braids $220</h3>
+                <button class="book">Book</button>
+            </div>
+            <div class="style-card" data-style="Small ponytail" data-price="220" data-addons='{}'>
+                <img src="./images/17.webp" alt="Small ponytail">
+                <h3>Small ponytail $220</h3>
+                <button class="book">Book</button>
+            </div>
+            <div class="style-card" data-style="Medium ponytail" data-price="180" data-addons='{}'>
+                <img src="./images/18.webp" alt="Medium ponytail">
+                <h3>Medium ponytail $180</h3>
+                <button class="book">Book</button>
+            </div>
+            <div class="style-card" data-style="Braids take out" data-price="70" data-addons='{}'>
+                <img src="./images/19.webp" alt="Braids take out">
+                <h3>Braids take out $70 upwards</h3>
+                <button class="book">Book</button>
+            </div>
+            <div class="style-card" data-style="Stich" data-price="20" data-addons='{"6 stich": 120, "10 stich": 180}'>
+                <img src="./images/19.webp" alt="Stich">
+                <h3>Stich $20</h3>
+                <button class="book">Book</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking-details" style="display:none;">
+        <h2>Booking Details</h2>
+        <form id="booking-form" class="booking-form">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" min="1" value="1">
+            <div id="selected-style"></div>
+            <div id="addons"></div>
+            <div id="total-price"></div>
+            <label for="appointment-date">Select Date (MM/DD/YYYY):</label>
+            <input type="date" id="appointment-date" pattern="\d{2}/\d{2}/\d{4}">
+            <label for="appointment-time">Select Time:</label>
+            <input type="time" id="appointment-time">
+            <input type="text" id="firstName" placeholder="First Name" required>
+            <input type="text" id="lastName" placeholder="Last Name" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required pattern="[0-9]{10}">
+            <input type="email" id="email" placeholder="Email Address" required>
+            <button type="button" id="confirm-booking">Confirm Booking</button>
+        </form>
+    </section>
+
+    <section id="confirmation" style="display:none;">
+        <h2>Confirmation</h2>
+        <form action="https://formspree.io/f/xbjnwlrp" method="POST" id="confirmation-form">
+            <div id="confirmation-details" class="confirmation-detail"></div>
+            <button type="submit" id="submit-booking">Submit</button>
+        </form>
+    </section>
+
+    <script>
+        function calculateTotalPrice() {
+            let basePrice = parseInt(sessionStorage.getItem('stylePrice'), 10);
+            let quantity = parseInt(sessionStorage.getItem('quantity'), 10);
+            let addons = JSON.parse(sessionStorage.getItem('selectedAddons')) || {};
+            let addonsPrice = Object.values(addons).reduce((sum, price) => sum + price, 0);
+            let totalPrice = (basePrice + addonsPrice) * quantity;
+            sessionStorage.setItem('totalPrice', totalPrice);
+            document.getElementById('total-price').innerText = `Total Price: $${totalPrice}`;
+        }
+
+        document.querySelectorAll('.book').forEach(button => {
+            button.addEventListener('click', function() {
+                const styleElement = this.closest('.style-card');
+                const style = styleElement.dataset.style;
+                const price = parseInt(styleElement.dataset.price, 10);
+                const addons = JSON.parse(styleElement.dataset.addons);
+
+                sessionStorage.setItem('selectedStyle', style);
+                sessionStorage.setItem('stylePrice', price);
+                sessionStorage.setItem('quantity', 1);
+                sessionStorage.setItem('addons', JSON.stringify(addons));
+                sessionStorage.setItem('selectedAddons', JSON.stringify({}));
+
+                document.getElementById('hairstyles').style.display = 'none';
+                document.getElementById('booking-details').style.display = 'block';
+
+                document.getElementById('selected-style').innerText = `Selected Style: ${style} - $${price}`;
+                document.getElementById('addons').innerHTML = '<p>Additional styles:</p>';
+                for (const [addon, addonPrice] of Object.entries(addons)) {
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.id = addon;
+                    checkbox.name = addon;
+                    checkbox.value = addonPrice;
+                    checkbox.addEventListener('change', function() {
+                        let selectedAddons = JSON.parse(sessionStorage.getItem('selectedAddons')) || {};
+                        if (this.checked) {
+                            selectedAddons[addon] = parseInt(this.value, 10);
+                        } else {
+                            delete selectedAddons[addon];
+                        }
+                        sessionStorage.setItem('selectedAddons', JSON.stringify(selectedAddons));
+                        calculateTotalPrice();
+                    });
+                    const label = document.createElement('label');
+                    label.htmlFor = addon;
+                    label.innerText = `${addon} $${addonPrice}`;
+                    document.getElementById('addons').appendChild(checkbox);
+                    document.getElementById('addons').appendChild(label);
+                    document.getElementById('addons').appendChild(document.createElement('br'));
+                }
+
+                calculateTotalPrice();
+            });
+        });
+
+        document.getElementById('quantity').addEventListener('input', function() {
+            sessionStorage.setItem('quantity', this.value);
+            calculateTotalPrice();
+        });
+
+        document.getElementById('appointment-date').addEventListener('change', function() {
+            this.classList.add('highlighted');
+        });
+
+        document.getElementById('appointment-time').addEventListener('change', function() {
+            this.classList.add('highlighted');
+        });
+
+        document.getElementById('confirm-booking').addEventListener('click', function() {
+            const date = document.getElementById('appointment-date').value;
+            const time = document.getElementById('appointment-time').value;
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const phoneNumber = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+
+            sessionStorage.setItem('appointmentDate', date);
+            sessionStorage.setItem('appointmentTime', time);
+            sessionStorage.setItem('firstName', firstName);
+            sessionStorage.setItem('lastName', lastName);
+            sessionStorage.setItem('phoneNumber', phoneNumber);
+            sessionStorage.setItem('email', email);
+
+            document.getElementById('booking-details').style.display = 'none';
+            document.getElementById('confirmation').style.display = 'block';
+
+            function formatTime(time) {
+                let [hour, minute] = time.split(':');
+                let period = 'AM';
+                hour = parseInt(hour);
+                if (hour >= 12) {
+                    period = 'PM';
+                    if (hour > 12) hour -= 12;
+                }
+                return `${hour}:${minute} ${period}`;
+            }
+
+            const formattedDate = new Date(date).toLocaleDateString('en-US');
+            const formattedTime = formatTime(time);
+
+            document.getElementById('confirmation-details').innerHTML = `
+                <input type="hidden" name="Style" value="${sessionStorage.getItem('selectedStyle')}">
+                <input type="hidden" name="Price" value="${sessionStorage.getItem('stylePrice')}">
+                <input type="hidden" name="Quantity" value="${sessionStorage.getItem('quantity')}">
+                <input type="hidden" name="Add-ons" value="${Object.keys(JSON.parse(sessionStorage.getItem('selectedAddons'))).join(', ')}">
+                <input type="hidden" name="Total Price" value="${sessionStorage.getItem('totalPrice')}">
+                <input type="hidden" name="Date" value="${formattedDate}">
+                <input type="hidden" name="Time" value="${formattedTime}">
+                <input type="hidden" name="Name" value="${sessionStorage.getItem('firstName')} ${sessionStorage.getItem('lastName')}">
+                <input type="hidden" name="Phone" value="${sessionStorage.getItem('phoneNumber')}">
+                <input type="hidden" name="Email" value="${sessionStorage.getItem('email')}">
+                <p>Style: ${sessionStorage.getItem('selectedStyle')}</p>
+                <p>Price: $${sessionStorage.getItem('stylePrice')}</p>
+                <p>Quantity: ${sessionStorage.getItem('quantity')}</p>
+                <p>Add-ons: ${Object.keys(JSON.parse(sessionStorage.getItem('selectedAddons'))).join(', ')}</p>
+                <p>Total Price: $${sessionStorage.getItem('totalPrice')}</p>
+                <p>Date: ${formattedDate}</p>
+                <p>Time: ${formattedTime}</p>
+                <p>Name: ${sessionStorage.getItem('firstName')} ${sessionStorage.getItem('lastName')}</p>
+                <p>Phone: ${sessionStorage.getItem('phoneNumber')}</p>
+                <p>Email: ${sessionStorage.getItem('email')}</p>
+            `;
+        });
+    </script>
+</body>
+</html>
